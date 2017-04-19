@@ -15,7 +15,7 @@ class Header extends Component {
         </h1>
         <ul>
           <li><NavLink to={`/#/`}>Home</NavLink></li>
-          <li><NavLink to={`/page/0`} id={0}>Page</NavLink></li>
+          <li><NavLink to={`/page/1`} id={1}>Page</NavLink></li>
         </ul>
       </div>
     )

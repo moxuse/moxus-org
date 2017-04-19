@@ -19,7 +19,7 @@ import Post from './post.jsx'
     })
 
     return (
-      <div className="post-container">
+      <div className="container">
         {rows}
       </div>
     )

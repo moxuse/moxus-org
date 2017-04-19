@@ -31,17 +31,15 @@ class App extends Component {
   }
 }
 
-const Root = () => (
+const Rooters = () => (
     <Router>
       <div>
-    
         <Route exact path='/' component={ App } />      
-        <Route name='page' path='/page/:id/' component={ Page } />    
-
+        <Route name='page' path='/page/:id/' component={ Page } />
       </div>
     </Router>  
 );
 
-ReactDOM.render(<Root />, document.getElementById('content'))
+ReactDOM.render(<Rooters />, document.getElementById('app'))
 
 export default App;

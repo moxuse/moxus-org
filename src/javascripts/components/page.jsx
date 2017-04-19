@@ -58,7 +58,7 @@ class Page extends Component {
     console.log(currentId, currentData)
 
     return (
-      <div>        
+      <div className="page">        
         <Container data={currentData}/>
         <Paginator currentPage={currentId.id} onChange={this.onPageChanged} max={currentId.max}/>        
       </div>
