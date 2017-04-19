@@ -11,9 +11,9 @@ import {
   Switch
 } from 'react-router-dom'
 
-import Header from './header.jsx';
-import Footer from './footer.jsx';
-import Page from './page.jsx';
+import Header from './components/header.jsx';
+import Footer from './components/footer.jsx';
+import Page from './components/page.jsx';
 
 class App extends Component {
   render () {

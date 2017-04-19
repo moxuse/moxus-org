@@ -13,7 +13,7 @@ import Paginator from './paginator.jsx'
 import ReactMixin from 'react-mixin'
 import { State } from 'react-router'
 
-import data from '../data.json'
+import data from '../../data.json'
 
 class Page extends Component {
   
