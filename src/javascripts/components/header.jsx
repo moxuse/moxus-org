@@ -4,7 +4,7 @@
 
 import React, { Component } from 'react'
 import { render } from 'react-dom';
-import { IndexLink, NavLink } from 'react-router-dom';
+import { Link } from 'react-router';
 
 class Header extends Component {
   render() {
@@ -14,8 +14,8 @@ class Header extends Component {
             moxus.org          
         </h1>
         <ul>
-          <li><NavLink to={`/#/`}>Home</NavLink></li>
-          <li><NavLink to={`/page/1`} id={1}>Page</NavLink></li>
+          <li><Link to={`/#/`}>Home</Link></li>
+          <li><Link to={`/#/page/1`} id={1}>Page</Link></li>
         </ul>
       </div>
     )

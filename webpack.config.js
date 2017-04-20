@@ -9,7 +9,7 @@ module.exports = {
 
   output: {
     path: __dirname + '/public',
-    filename: 'javascripts/[name].js',
+    filename: 'javascripts/app.js',
   },
   // resolve : {
   //   alias: {

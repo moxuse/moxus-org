@@ -25,6 +25,7 @@ class Page extends Component {
     this.getCurrentData = this.getCurrentData.bind(this);
     this.state = this.getCurrentId();
     this.onPageChanged = this.onPageChanged.bind(this);
+    console.log('Pag::const', this.props);
   }
 
   getCurrentId() {
@@ -58,9 +59,11 @@ class Page extends Component {
     console.log(currentId, currentData)
 
     return (
-      <div className="page">        
-        <Container data={currentData}/>
-        <Paginator currentPage={currentId.id} onChange={this.onPageChanged} max={currentId.max}/>        
+      <div>
+        <div className="page">        
+          <Container data={currentData}/>
+          <Paginator currentPage={currentId.id} onChange={this.onPageChanged} max={currentId.max}/>        
+        </div>
       </div>
     )
   }

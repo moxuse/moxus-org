@@ -5,11 +5,13 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import {
-  BrowserRouter as Router,
+  Router,
   Route,
+  Redirect,
+  IndexRoute,
   Link,
-  Switch
-} from 'react-router-dom'
+  browserHistory
+} from 'react-router'
 
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
@@ -20,26 +22,26 @@ class App extends Component {
     return (
       <div>
         <Header />
-        
         <main>
           {this.props.children}
         </main>
-
         <Footer />
       </div>
     );
   }
 }
 
-const Rooters = () => (
-    <Router>
-      <div>
-        <Route exact path='/' component={ App } />      
-        <Route name='page' path='/page/:id/' component={ Page } />
-      </div>
-    </Router>  
+var routes = (
+  <Route path= '/' component={ App }>
+    <IndexRoute name='/page' component={ Page }/>
+    <Route name='page' path='../page/:id' component={ Page } />
+  </Route>
+)
+
+ReactDOM.render(
+  <Router routes={routes} history={browserHistory} />,
+  document.getElementById('app')
 );
 
-ReactDOM.render(<Rooters />, document.getElementById('app'))
 
 export default App;

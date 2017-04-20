@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import ReactMixin from 'react-mixin'
 import { createLocation } from 'history';
 import { reactMixin } from 'react-mixin';
-import { State, NavLink, History } from 'react-router-dom';
+import { State, Link, History } from 'react-router';
 
 class Paginator extends Component {
 
@@ -74,27 +74,27 @@ class Paginator extends Component {
         <ul className={'pagination ' + className}>
           <li className={s.currentPage === 1 ? 'disabled' : ''}>
             
-              <NavLink to={'../page/' + previousPage} onClick={this.onClicked.bind(this, previousPage)}>   
+              <Link to={'../page/' + previousPage} onClick={this.onClicked.bind(this, previousPage)}>   
                 <span aria-hidden="true">&laquo;</span>
                 <span className="sr-only">Prev</span>
-              </NavLink>
+              </Link>
             
           </li>
           {iterator.map(function(page) {
             return (
               <li key={page}
                 className={s.currentPage === page ? 'active' : ''}>
-                <NavLink to={'../page/' + page} onClick={this.onClicked.bind(this, page)}>
+                <Link to={'../page/' + page} onClick={this.onClicked.bind(this, page)}>
                   {page}
-                </NavLink>
+                </Link>
               </li>
             );
           }, this)}
           <li className={s.currentPage === p.max ? 'disabled' : ''}>
-            <NavLink to={'../page/' + nextPage} onClick={this.onClicked.bind(this, nextPage)}>
+            <Link to={'../page/' + nextPage} onClick={this.onClicked.bind(this, nextPage)}>
               <span aria-hidden="true">&raquo;</span>
               <span className="sr-only">Next</span>
-            </NavLink>
+            </Link>
           </li>
         </ul>
       </nav>
