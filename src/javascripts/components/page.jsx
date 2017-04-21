@@ -14,7 +14,7 @@ import { State } from 'react-router';
 
 import data from '../../data.json'
 
-const NUM_POST_PAR_A_PAGE = 3
+const NUM_POST_PAR_A_PAGE = 4
 
 class Page extends Component {
   

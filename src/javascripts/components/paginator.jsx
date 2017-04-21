@@ -29,7 +29,6 @@ class Paginator extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.currentPage !== this.state.currentPage) {
-        console.log('staet change..',prevProps, prevState )
     }
   }
 
@@ -45,7 +44,6 @@ class Paginator extends Component {
 
   render() {
 
-    console.log('draw called pre', this.props,this.state)
     const
       p = this.props,
       s = this.state,
@@ -73,12 +71,16 @@ class Paginator extends Component {
       nextPage = s.currentPage + 1
     }
 
-    console.log('draw called last', className,this.props,this.state)
+    const pev_hiding = (1 === s.currentPage) ? 'hiding' : '';
+    const prev_class_name = s.currentPage === 1 ? 'disabled' : '';
+
+    const next_hiding = (max === s.currentPage) ? 'hiding' : '';
+    const next_class_name = s.currentPage === p.max ? 'disabled' : '';
 
     return (
       <nav className='paginator'>
         <ul className={'pagination ' + className}>
-          <li className={s.currentPage === 1 ? 'disabled' : ''}>
+          <li className={`${prev_class_name} ${pev_hiding}`}>
             
               <Link to={'../page/' + previousPage} onClick={this.onClicked.bind(this, previousPage)}>   
                 <span aria-hidden="true">&laquo;</span>
@@ -87,16 +89,18 @@ class Paginator extends Component {
             
           </li>
           {iterator.map(function(page) {
+            const className = s.currentPage === page ? 'active' : '';
+            const hiding = (0 >= page) ? 'hiding' : '';
             return (
               <li key={page}
-                className={s.currentPage === page ? 'active' : ''}>
+                className={`${className} ${hiding}`}>
                 <Link to={'../page/' + page} onClick={this.onClicked.bind(this, page)}>
                   {page}
                 </Link>
               </li>
             );
           }, this)}
-          <li className={s.currentPage === p.max ? 'disabled' : ''}>
+          <li className={`${next_class_name} ${next_hiding}`}>
             <Link to={'../page/' + nextPage} onClick={this.onClicked.bind(this, nextPage)}>
               <span aria-hidden="true">&raquo;</span>
               <span className="sr-only">Next</span>
