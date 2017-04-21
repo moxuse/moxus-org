@@ -11,7 +11,7 @@ class Header extends Component {
     return (
       <div className="header">
         <h1>          
-            moxus.org          
+            pagenator-test        
         </h1>
         <ul>
           <li><Link to={`/#/`}>Home</Link></li>

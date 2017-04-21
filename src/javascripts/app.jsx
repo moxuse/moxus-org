@@ -34,6 +34,8 @@ class App extends Component {
 var routes = (
   <Route path= '/' component={ App }>
     <IndexRoute name='/page' component={ Page }/>
+    <Redirect name='page' from='#/page/:id' to='page/:id' component={ Page } />
+    <Route name='page' path='page/:id' component={ Page } />
     <Route name='page' path='../page/:id' component={ Page } />
   </Route>
 )

@@ -10,53 +10,57 @@ import { createLocation } from 'history';
 import { reactMixin } from 'react-mixin';
 import { State, Link, History } from 'react-router';
 
-class Paginator extends Component {
+const MAX_VISIBLE_COUNT = 5;
 
+class Paginator extends Component {
   constructor(props) {
     super(props);
-
-    var id = 1;
-    if (this.props.params) {
-      id = this.props.params.id;
-    }
-
-    this.state = {
-      currentPage: id,
-      items: []
-    }
-
+    this.state = this.getDefaultState.bind(this)();
     this.onClicked = this.onClicked.bind(this);
+  }
+
+  getDefaultState() {
+    return { currentPage: this.props.currentPage }
+  }
+
+  getPageMax() {
+    return Math.floor(this.props.dataLength / this.props.postParARange) + 1;
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.currentPage !== this.state.currentPage) {
-        //console.log('staet change..')
+        console.log('staet change..',prevProps, prevState )
     }
   }
 
   onClicked(newPage) {
     this.setState({currentPage: newPage});
-    this._onChange();
+    this._onChange(newPage);
   }
 
-  _onChange() {
-    console.log('pagenator::onchnage',this.state.currentPage);
-    this.props.onChange(this.state.currentPage);
+  _onChange(page) {
+    console.log('pagenator::onchnage::newpage',page);
+    this.props.onChange(page);
   }
 
   render() {
-    var className = this.props.className || '',
+
+    console.log('draw called pre', this.props,this.state)
+    const
       p = this.props,
       s = this.state,
+      max = this.getPageMax();
+    var className = this.props.className || '',
       skip = 0;
 
-    if (s.currentPage > p.maxVisible - 1 && s.currentPage < p.max) {
+    if (s.currentPage > p.maxVisible - 1 && s.currentPage < max) {
       skip = s.currentPage - p.maxVisible + 1;
-    } else if (s.currentPage === p.max) {
+    } else if (s.currentPage === max) {
       skip = s.currentPage - p.maxVisible;
     }
+    const num_show_page_num = Math.min(max, p.maxVisible);
 
-    var iterator = Array.apply(null, Array(p.maxVisible)).map(function(v, i) {
+    var iterator = Array.apply(null, Array(num_show_page_num)).map(function(v, i) {
       return skip + i + 1;
     });
 
@@ -65,9 +69,11 @@ class Paginator extends Component {
       previousPage = s.currentPage - 1;
     };
     var nextPage = 1;
-    if (s.currentPage < p.max) {
+    if (s.currentPage < max) {
       nextPage = s.currentPage + 1
     }
+
+    console.log('draw called last', className,this.props,this.state)
 
     return (
       <nav className='paginator'>
@@ -102,8 +108,8 @@ class Paginator extends Component {
   }
 }
 Paginator.propTypes = {
-  params: PropTypes.object,
-  max: PropTypes.number.isRequired,
+  dataLength: PropTypes.number.isRequired,
+  postParARange: PropTypes.number.isRequired,
   maxVisible: PropTypes.number,
   onChange: PropTypes.func.isRequired
 };
@@ -111,15 +117,12 @@ Paginator.propTypes = {
 ReactMixin.onClass(Paginator, State);
 ReactMixin.onClass(Paginator, History);
 
-Paginator.defaultProps = { 
-  params: {},
-  max: 0,
-  maxVisible: 5,
-  onChange: ()=>{}
+Paginator.defaultProps = {
+  currentPage: 0,
+  dataLength: 0,
+  postParARange: 0,
+  maxVisible: MAX_VISIBLE_COUNT,
+  onChange: undefined
 };
-
-// reactMixin(Paginator.prototype, State);
-// Paginator.prototype.linkState = React.addons.LinkedStateMixin.linkState
-// reactMixin(Paginator.prototype, History);
 
 export default Paginator;

@@ -12,7 +12,7 @@ import Post from './post.jsx'
 
     data.map((item) => {
       var key;
-      var title = key = item.title + '.scsyndef';
+      var title = key = item.title;
       var image = './images/' + item.image;
       var date = item.date;
       rows.push(<Post title={title} image={image} date={date} key={key} />)

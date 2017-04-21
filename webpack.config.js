@@ -9,7 +9,7 @@ module.exports = {
 
   output: {
     path: __dirname + '/public',
-    filename: 'javascripts/app.js',
+    filename: 'javascripts/[name].js',
   },
   // resolve : {
   //   alias: {
@@ -56,7 +56,8 @@ module.exports = {
     new copyWebpackPlugin([{ from: './src/', to: './' }], {
       ignore: [
         '.DS_Store',
-        '.gitkeep'
+        '.gitkeep',
+        'javascripts/components/*.jsx'
       ]
     })
   ]

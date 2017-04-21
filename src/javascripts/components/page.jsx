@@ -1,68 +1,67 @@
 /*
   page.jsx
 */
-
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 import PropTypes from 'prop-types';
 
-import Header from './header.jsx'
-import Footer from './footer.jsx'
-import Container from './container.jsx'
-import Paginator from './paginator.jsx'
-import ReactMixin from 'react-mixin'
-import { State } from 'react-router'
+import Header from './header.jsx';
+import Footer from './footer.jsx';
+import Container from './container.jsx';
+import Paginator from './paginator.jsx';
+import ReactMixin from 'react-mixin';
+import { State } from 'react-router';
 
 import data from '../../data.json'
+
+const NUM_POST_PAR_A_PAGE = 3
 
 class Page extends Component {
   
   constructor(props) {
     super(props);
-    this.POST_NUM_PAR_A_PAGE = 4;
-    //this.props = {id : props.match.params.id};
-    this.getCurrentId = this.getCurrentId.bind(this);
-    this.getCurrentData = this.getCurrentData.bind(this);
-    this.state = this.getCurrentId();
+    this.state = this.getDefaultState.bind(this)();
+    this.getCurrentRange = this.getCurrentRange.bind(this);
+    this.getCurrentData = this.getCurrentData.bind(this);    
     this.onPageChanged = this.onPageChanged.bind(this);
-    console.log('Pag::const', this.props);
+  }
+  getDefaultState() {
+    return {currentPage: 1, currentRange: {from: 1, to: NUM_POST_PAR_A_PAGE}};
   }
 
-  getCurrentId() {
-    var id = 1;
+  getCurrentRange() {
+    var from = 1;
     if (this.state) {
-      id = +this.state.id;
+      from = (this.state.currentPage - 1) * NUM_POST_PAR_A_PAGE;
     };
-
-    var max = Math.floor(data.length / this.POST_NUM_PAR_A_PAGE) + 1;
-  
-    return {id: id, max: max};
+    const to = from + NUM_POST_PAR_A_PAGE;
+    return {from: from, to: to};
   }
 
   getCurrentData() { // generate datas for each page..
-    var index = this.POST_NUM_PAR_A_PAGE * this.getCurrentId().id - 1;
-    console.log(data)
-    return data.slice(index, index + this.POST_NUM_PAR_A_PAGE);
+    const from = this.getCurrentRange().from;
+    const to = this.getCurrentRange().to;
+    //console.log('Pge::getCurrentData: ',data, from, to);
+    return data.slice(from, to);
   }
 
   onPageChanged(page) {
-    // mounted
-    this.setState({id: page});
+    this.setState({currentPage: page});
   }
 
   render() {
-    var currentId = this.getCurrentId();
+    var currentRange = this.getCurrentRange();
     var currentData = this.getCurrentData();
 
     console.log('Page::render');
 
-    console.log(currentId, currentData)
+    console.log(currentRange, currentData)
 
     return (
       <div>
-        <div className="page">        
+        <div className="page">            
           <Container data={currentData}/>
-          <Paginator currentPage={currentId.id} onChange={this.onPageChanged} max={currentId.max}/>        
+          <Paginator currentPage={currentRange.from + 1} dataLength={data.length} postParARange={NUM_POST_PAR_A_PAGE} onChange={this.onPageChanged}/>        
         </div>
       </div>
     )
@@ -75,7 +74,7 @@ Page.propTypes = {
 
 ReactMixin.onClass(Page, State);
 
-Page.defaultProps = {id: 1};
+Page.defaultProps = {data: data};
 
 export default Page;
 
