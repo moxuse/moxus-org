@@ -73,16 +73,16 @@ class Paginator extends Component {
       nextPage = s.currentPage + 1
     }
 
-    const pev_hiding = (1 === s.currentPage) ? 'hiding' : '';
+    const pev_hiding = (1 === s.currentPage) ? styles.hiding : '';
     const prev_class_name = s.currentPage === 1 ? 'disabled' : '';
 
-    const next_hiding = (max === s.currentPage) ? 'hiding' : '';
+    const next_hiding = (max === s.currentPage) ? styles.hiding : '';
     const next_class_name = s.currentPage === p.max ? 'disabled' : '';
 
     return (
-      <nav className='paginator'>
-        <ul className={'pagination ' + className}>
-          <li className={`${prev_class_name} ${pev_hiding}`}>
+      <nav className={styles.paginator}>
+        <ul className={`${styles.pagination} ${className}`}>
+          <li className={`${styles.lists} ${prev_class_name} ${pev_hiding}`}>
             
               <Link to={'blog/' + previousPage} onClick={this.onClicked.bind(this, previousPage)}>   
                 <span aria-hidden="true">&laquo;</span>
@@ -91,18 +91,18 @@ class Paginator extends Component {
             
           </li>
           {iterator.map(function(page) {
-            const className = s.currentPage === page ? 'active' : '';
-            const hiding = (0 >= page) ? 'hiding' : '';
+            const className = s.currentPage === page ? styles.active : '';
+            const hiding = (0 >= page) ? styles.hiding : '';
             return (
               <li key={page}
-                className={`${className} ${hiding}`}>
+                className={`${styles.lists} ${className} ${hiding}`}>
                 <Link to={'blog/' + page} onClick={this.onClicked.bind(this, page)}>
                   {page}
                 </Link>
               </li>
             );
           }, this)}
-          <li className={`${next_class_name} ${next_hiding}`}>
+          <li className={`${styles.lists} ${next_class_name} ${next_hiding}`}>
             <Link to={'blog/' + nextPage} onClick={this.onClicked.bind(this, nextPage)}>
               <span className="sr-only">Next</span>
               <span aria-hidden="true">&raquo;</span>

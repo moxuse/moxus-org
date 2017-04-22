@@ -1,6 +1,7 @@
 .paginator {
   margin: 0 auto;
   width: 60%;
+  margin-bottom: 80px;
 }
 
 .paginator .pagination {
@@ -11,6 +12,11 @@
 .paginator .pagination li {
   display: inline-block;
   padding: 5px;
+  opacity: 0.3;
+}
+
+.paginator .pagination .active {
+  opacity: 1;
 }
 
 .paginator .pagination .hiding {

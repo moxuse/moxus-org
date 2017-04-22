@@ -8,7 +8,7 @@ class PostLoader {
         try{
         var res = yaml(result);
         } catch (error) {
-          console.log('YAML PARSE ERROR:',error)
+          console.log('YAML PARSE ERROR in :',path ,error.message)
         }
         resolve(res);
       })

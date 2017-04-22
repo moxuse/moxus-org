@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ice  log / score ...
+title: "ice  log / score ..."
 permalink: http://moxus.org/583
 post_id: 583
 categories: 

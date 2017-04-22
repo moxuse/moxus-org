@@ -19,12 +19,13 @@ import Page from './components/page.jsx';
 import Project from './components/project.jsx';
 import NotFound404 from './components/notfound404.jsx'
 
-import style from "../stylesheets/style.scss";
+import styles from "./app.css";
+console.log(styles)
 
 class App extends Component {
   render () {
     return (
-      <div>
+      <div className={styles.app}>
         <Header />
         <main>
           {this.props.children}

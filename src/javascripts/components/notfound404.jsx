@@ -9,9 +9,9 @@ class NotFound404 extends Component {
   render() {
     return (
       <div className="notfound">
-        <h1>
-          NOT FOUND
-        </h1>
+        <h2>
+          PAGE NOT FOUND
+        </h2>
       </div>
     )
   }
