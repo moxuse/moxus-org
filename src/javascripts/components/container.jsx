@@ -24,7 +24,11 @@ class Container extends Component {
     return new Promise((resolve) => {
       var title = item.title;
       const image = './images/' + item.image;
-      const date = item.date;
+      var date = item.date;
+      if (!date) {
+        date = item.path.slice(0,10);
+        console.log(date);
+      }
       new PostLoader(item.path)
         .then((res) => {          
           const key = res.attributes.post_id + Date.now();

@@ -45,7 +45,7 @@ class Paginator extends Component {
   }
 
   render() {
-
+    
     const
       p = this.props,
       s = this.state,

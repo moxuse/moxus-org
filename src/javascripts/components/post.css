@@ -1,6 +1,6 @@
 .post {
-  margin-top: 30px;
-  margin-bottom: 90px;
+  margin-top: 40px;
+  margin-bottom: 180px;
 }
 
 .post .title {
@@ -12,5 +12,5 @@
 }
 
 .post .content {
-
+  font-size: 16px;
 }

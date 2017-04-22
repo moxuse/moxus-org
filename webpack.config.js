@@ -75,7 +75,6 @@ module.exports = {
     console: true,
   },
 
-  devtool: 'inline-source-map',
 
   plugins: [
     new ExtractTextPlugin("[name].css"),
@@ -96,7 +95,10 @@ module.exports = {
           'javascripts/index.jsx'
         ]
       }
-    )
+    ),
+    new webpack.optimize.UglifyJsPlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
   ],
   node: {
     fs: "empty"
