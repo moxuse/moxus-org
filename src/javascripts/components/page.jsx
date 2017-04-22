@@ -53,14 +53,10 @@ class Page extends Component {
     var currentRange = this.getCurrentRange();
     var currentData = this.getCurrentData();
 
-    console.log('Page::render');
-
-    console.log(currentRange, currentData)
-
     return (
       <div>
         <div className="page">            
-          <Container data={currentData}/>
+          <Container multiple={true} data={currentData}/>
           <Paginator currentPage={currentRange.from + 1} dataLength={data.length} postParARange={NUM_POST_PAR_A_PAGE} onChange={this.onPageChanged}/>        
         </div>
       </div>

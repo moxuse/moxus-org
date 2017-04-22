@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-
   entry: {
     app: './src/javascripts/app.jsx'
   },
@@ -35,9 +34,23 @@ module.exports = {
         test: /\.jpe?g$|\.gif$|\.png$/i,
         loader: "file-loader" 
       },
-      {
+      { 
         test: /\.json$/,
-        use: 'json-loader'
+        loader: "json-loader" 
+      },
+      {
+        test: /\.yaml$/,
+        use: [
+          'file-loader',
+          'json-loader',          
+          'yaml-loader',
+        ]
+      },
+      {
+        test: /\.md$/, 
+        use: [
+          'markdown-with-front-matter-loader'
+        ]
       }
     ],
   },
@@ -53,12 +66,19 @@ module.exports = {
       "$":"jquery",
       "jQuery":"jquery"
     }),
-    new copyWebpackPlugin([{ from: './src/', to: './' }], {
-      ignore: [
-        '.DS_Store',
-        '.gitkeep',
-        'javascripts/components/*.jsx'
-      ]
-    })
+    new copyWebpackPlugin(
+      [
+        { from: './src/', to: './' }
+      ],
+      {
+        ignore: 
+        [
+          '.DS_Store',
+          '.gitkeep',
+          'javascripts/components/**/*',
+          'javascripts/index.jsx'
+        ]
+      }
+    )
   ]
 };

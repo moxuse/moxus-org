@@ -5,10 +5,12 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import PropTypes from 'prop-types';
-import ReactMixin from 'react-mixin'
+import ReactMixin from 'react-mixin';
 import { createLocation } from 'history';
 import { reactMixin } from 'react-mixin';
 import { State, Link, History } from 'react-router';
+
+import styles from './paginator.css';
 
 const MAX_VISIBLE_COUNT = 5;
 
@@ -82,7 +84,7 @@ class Paginator extends Component {
         <ul className={'pagination ' + className}>
           <li className={`${prev_class_name} ${pev_hiding}`}>
             
-              <Link to={'../page/' + previousPage} onClick={this.onClicked.bind(this, previousPage)}>   
+              <Link to={'blog/' + previousPage} onClick={this.onClicked.bind(this, previousPage)}>   
                 <span aria-hidden="true">&laquo;</span>
                 <span className="sr-only">Prev</span>
               </Link>
@@ -94,16 +96,16 @@ class Paginator extends Component {
             return (
               <li key={page}
                 className={`${className} ${hiding}`}>
-                <Link to={'../page/' + page} onClick={this.onClicked.bind(this, page)}>
+                <Link to={'blog/' + page} onClick={this.onClicked.bind(this, page)}>
                   {page}
                 </Link>
               </li>
             );
           }, this)}
           <li className={`${next_class_name} ${next_hiding}`}>
-            <Link to={'../page/' + nextPage} onClick={this.onClicked.bind(this, nextPage)}>
-              <span aria-hidden="true">&raquo;</span>
+            <Link to={'blog/' + nextPage} onClick={this.onClicked.bind(this, nextPage)}>
               <span className="sr-only">Next</span>
+              <span aria-hidden="true">&raquo;</span>
             </Link>
           </li>
         </ul>

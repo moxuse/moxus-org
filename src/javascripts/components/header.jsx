@@ -11,11 +11,13 @@ class Header extends Component {
     return (
       <div className="header">
         <h1>          
-            pagenator-test        
+            moxus.org      
         </h1>
         <ul>
-          <li><Link to={`/#/`}>Home</Link></li>
-          <li><Link to={`/#/page/1`} id={1}>Page</Link></li>
+          <li><Link to={`/`}>top</Link></li>
+          <li><Link to={`/cv/1`} id={1}>cv</Link></li>
+          <li><Link to={`/project`}>project</Link></li>
+          <li><Link to={`/blog/1`} id={1}>blog</Link></li>
         </ul>
       </div>
     )
