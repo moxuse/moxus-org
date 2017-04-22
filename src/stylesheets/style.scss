@@ -4,7 +4,7 @@ body {
   margin: 0 auto;
 }
 
-#content {
+#app {
   font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   .header {
@@ -16,30 +16,6 @@ body {
     }
     h1 {
       margin-top: 40px;
-    }
-  }
-
-  .post {
-    margin: 0 auto;
-    max-width: 1440px;
-
-    padding-top: 20px;
-    padding-bottom: 80px;
-
-    img {
-      max-width: 1440px;
-      max-height: 1440px;
-    }
-
-    .date p{
-      color: #444;
-      font-weight: bold;
-    }
-
-    .title p{
-      color: #888;
-      font-weight: bold;
-      font-size: 0.9em;
     }
   }
 

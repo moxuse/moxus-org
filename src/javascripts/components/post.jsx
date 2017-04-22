@@ -4,22 +4,26 @@
 
 import React, { Component } from 'react'
 import { render } from 'react-dom';
+import MD from 'react-markdown';
 
 class Post extends Component {
   render() {
     return (
       <div className="post">
-        <div className="date">
-          <p>
-            {this.props.date}
-          </p>
-        </div>
-       
-
         <div className="title">
-          <p>
+          <h2>
             {this.props.title}
-          </p>
+          </h2>
+        </div>
+
+        <div className="date">
+          <h3>
+            {this.props.date}
+          </h3>
+        </div>
+
+        <div className="content">
+          <MD source={this.props.body} />
         </div>
       </div>
     )
@@ -27,3 +31,5 @@ class Post extends Component {
 }
 
 export default Post;
+
+//

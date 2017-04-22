@@ -20,20 +20,18 @@ class Page extends Component {
   
   constructor(props) {
     super(props);
+    console.log('initial', this.props.id , this.props.params.id)
     this.state = this.getDefaultState.bind(this)();
     this.getCurrentRange = this.getCurrentRange.bind(this);
     this.getCurrentData = this.getCurrentData.bind(this);    
     this.onPageChanged = this.onPageChanged.bind(this);
   }
   getDefaultState() {
-    return {currentPage: 1, currentRange: {from: 1, to: NUM_POST_PAR_A_PAGE}};
+    return {currentPage: this.props.id || this.props.params.id, currentRange: {from: 1, to: NUM_POST_PAR_A_PAGE}};
   }
 
   getCurrentRange() {
-    var from = 1;
-    if (this.state) {
-      from = (this.state.currentPage - 1) * NUM_POST_PAR_A_PAGE;
-    };
+    const from = (this.state.currentPage - 1) * NUM_POST_PAR_A_PAGE;
     const to = from + NUM_POST_PAR_A_PAGE;
     return {from: from, to: to};
   }
@@ -45,19 +43,25 @@ class Page extends Component {
     return data.slice(from, to);
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log('nextProps::',nextProps.params.id)    
+    this.setState({currentPage: nextProps.params.id});
+  }
+
   onPageChanged(page) {
     this.setState({currentPage: page});
   }
 
   render() {
+    console.log('paeg::currentPage::pre',this.state.currentPage)
     var currentRange = this.getCurrentRange();
     var currentData = this.getCurrentData();
-
+    console.log('paeg::currentPage',this.state.currentPage,currentRange,currentData[0])
     return (
       <div>
         <div className="page">            
           <Container multiple={true} data={currentData}/>
-          <Paginator currentPage={currentRange.from + 1} dataLength={data.length} postParARange={NUM_POST_PAR_A_PAGE} onChange={this.onPageChanged}/>        
+          <Paginator currentPage={currentRange.from / NUM_POST_PAR_A_PAGE + 1} dataLength={data.length} postParARange={NUM_POST_PAR_A_PAGE} onChange={this.onPageChanged}/>        
         </div>
       </div>
     )
@@ -65,7 +69,7 @@ class Page extends Component {
 }
 
 Page.propTypes = {
-  id: PropTypes.number
+  currentPage: PropTypes.number
 };
 
 ReactMixin.onClass(Page, State);

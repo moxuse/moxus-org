@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const copyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -43,11 +44,18 @@ module.exports = {
         use: [
           'file-loader',
           'json-loader',          
-          'yaml-loader',
+          'yaml-loader'
         ]
       },
       {
-        test: /\.md$/, 
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract({ 
+          fallback: 'style-loader', 
+          use: 'css-loader!sass-loader'
+        })
+      },
+      {
+        test: /\.md$/,
         use: [
           'markdown-with-front-matter-loader'
         ]
@@ -62,6 +70,7 @@ module.exports = {
   devtool: 'inline-source-map',
 
   plugins: [
+    new ExtractTextPlugin("[name].css"),
     new webpack.ProvidePlugin({
       "$":"jquery",
       "jQuery":"jquery"
@@ -80,5 +89,8 @@ module.exports = {
         ]
       }
     )
-  ]
+  ],
+  node: {
+    fs: "empty"
+  }
 };

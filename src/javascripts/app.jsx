@@ -19,6 +19,8 @@ import Page from './components/page.jsx';
 import Project from './components/project.jsx';
 import NotFound404 from './components/notfound404.jsx'
 
+import style from "../stylesheets/style.scss";
+
 class App extends Component {
   render () {
     return (
@@ -35,13 +37,13 @@ class App extends Component {
 
 class Inbox extends Component {
   render () {
-    console.log(this.props.children)
+    //console.log('Index::props.children',this.props.children)
     return (
       <div>
         <h1>
-          Index
+          blog
         </h1>
-        {this.props.children || "Welcome to your Inbox"}
+        {this.props.children}
       </div>
     );
   }
@@ -59,6 +61,9 @@ var routes = (
     <Route component={ Inbox }>
       <Route path='blog/:id' component={ Page } />
     </Route>
+
+    <Redirect from="blog" to="/blog/1" component={ Inbox } />
+
     <Route path='*' component={ NotFound404 } />   
   </Route>
 )
