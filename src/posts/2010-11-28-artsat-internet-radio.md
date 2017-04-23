@@ -11,7 +11,7 @@ categories:
 - ストリーミングライブ
 ---
 
-[![](http://moxus.org/wp-content/uploads/2010/11/artsatInternetRadio_logo.png)](http://moxus.org/wp-content/uploads/2010/11/artsatInternetRadio_logo.png)
+[![](/images/artsatInternetRadio_logo.png)](/images/artsatInternetRadio_logo.png)
 ARTSAT Internet Radio 始めました。
 衛星からのデータによって音をジェネレートするラジオです。
 数分おきに現在のセンサーデータの読み上げもあります。

@@ -10,5 +10,5 @@ categories:
 - 制作
 ---
 
-[![](http://moxus.org/wp-content/uploads/2008/12/P1000944_thum.jpg)](http://moxus.org/?page_id=685)
+[![](/images/P1000944_thum.jpg)](http://moxus.org/?page_id=685)
 vector sky map

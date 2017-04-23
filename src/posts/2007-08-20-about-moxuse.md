@@ -7,7 +7,7 @@ categories:
 - 雑記
 ---
 
-![20071028-img013.jpg](http://moxuse.org/blog/media/1/20071028-img013.jpg)
+![20071028-img013.jpg](/images/20071028-img013.jpg)
 Koichiro Mori
 A.K.A. moxuse
 
