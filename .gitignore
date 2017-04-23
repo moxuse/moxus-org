@@ -1,5 +1,7 @@
 node_modules/
 public/
-.DS_Store
+.sass-cache/
+
 deploy.sh
-.sass-cache/**/*
+.DS_Store
+
