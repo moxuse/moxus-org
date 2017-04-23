@@ -5,8 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p",
+    "build": "npm run sass && webpack -p",
     "watch": "npm run start",
+    "sass": "compass compile src/stylesheets/sass/menu_btn.scss",
     "start": "npm run build && webpack-dev-server --content-base /public"
   },
   "author": "moxus",

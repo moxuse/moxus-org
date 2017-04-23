@@ -9,7 +9,7 @@ module.exports = {
 
   output: {
     path: __dirname + '/public',
-    filename: 'javascripts/[name].js',
+    filename: 'javascripts/[name].js'
   },
   // resolve : {
   //   alias: {
@@ -95,10 +95,10 @@ module.exports = {
           'javascripts/index.jsx'
         ]
       }
-    ),
-    new webpack.optimize.UglifyJsPlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    })
+    )
+    // new webpack.optimize.UglifyJsPlugin({
+    //   'process.env.NODE_ENV': JSON.stringify('production')
+    // })
   ],
   node: {
     fs: "empty"

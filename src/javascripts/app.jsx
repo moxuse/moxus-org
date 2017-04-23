@@ -40,7 +40,7 @@ class Inbox extends Component {
   render () {
     //console.log('Index::props.children',this.props.children)
     return (
-      <div>
+      <div className={styles.subtitle}>
         <h1>
           blog
         </h1>

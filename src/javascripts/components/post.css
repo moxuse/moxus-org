@@ -1,16 +1,39 @@
 .post {
+  color: #333333;
   margin-top: 40px;
   margin-bottom: 180px;
 }
 
 .post .title {
-
+  font-size: 18px;
 }
 
 .post .date {
 
 }
 
+.post .date ::selection {
+  background:#eeff46;
+}
+
 .post .content {
   font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
+
+.post .content img {
+  max-width: 100%;
+}
+
+.post .content p {
+  line-height: 1.6em;
+}
+
+.post .content a:link {
+ color: #4433cc; 
+ text-decoration: none;
+}
+.post .content a:visited { color: #4444cc; }
+.post .content a:hover { color: #6666cc; }
+.post .content a:active { color: #4444cc; }

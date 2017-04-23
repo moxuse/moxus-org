@@ -5,12 +5,19 @@
   margin-bottom: 50px;
 }
 
-.header .menu {
-  position: absolute;
-  left: 66%;
-  top: 45px;
+.header .title {
+  color: #444444;
+  font-size: 20px;
 }
 
+.header .menu_btn_wrap {
+  position: relative;
+  float: right;
+  right: 0%;
+  top: -78px;
+}
+
+/*
 .header .menu li {
   font-size: 18px;
   font-weight: bold;
@@ -25,4 +32,4 @@
 
 .header .menu h1 {
   margin-top: 40px;
-}
+}*/
