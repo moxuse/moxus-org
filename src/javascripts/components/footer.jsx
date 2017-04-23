@@ -13,7 +13,7 @@ class Footer extends Component {
       <div className="footer">
         <hr></hr>
         <p>
-          moxus.org : 2006-2017
+          © 2006-17 moxus.org
         </p>
       </div>
     )
