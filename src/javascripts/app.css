@@ -12,6 +12,29 @@ a:active { color: #444444; }
 ::selection {
   background:#ffdcd6;
 }
+p {
+  word-wrap: break-word;
+}
+
+blockquote {
+  margin-left: 0;
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45em;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
+
+pre code {
+  line-height: 2.0em;
+}
 
 .app {
   font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
