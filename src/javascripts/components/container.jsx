@@ -39,7 +39,6 @@ class Container extends Component {
     this.assigin();
   }
   componentWillReceiveProps() {
-    console.log("componentWillReceiveProps", this.props.data);
     this.assigin();
   }
   assigin() {
@@ -72,9 +71,9 @@ class Container extends Component {
   }
 
   render() {
-    console.log('Container::draw..',this.state.rows[0]);
+    //console.log('Container::draw..',this.state.rows[0]);
     return (
-      <div className="container">
+      <div>
         {this.state.rows}
       </div>
     )

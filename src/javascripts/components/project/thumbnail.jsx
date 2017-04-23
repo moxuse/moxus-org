@@ -22,5 +22,4 @@ class Thumbnail extends Component {
     )
   }
 }
-
 export default Thumbnail;

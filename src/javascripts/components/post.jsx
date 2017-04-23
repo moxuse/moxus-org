@@ -17,19 +17,13 @@ class Post extends Component {
     const unwraped = currentData;
     return (
       <div>
-        <div className="page">            
+        <div className="container">            
           <Container multiple={false} data={unwraped} />
         </div>
       </div>
     )
   }
 }
-
-// Post.propTypes = {
-//   path: PropTypes.string
-// };
-
-// Post.defaultProps = {path: ""};
 
 export default Post;
 

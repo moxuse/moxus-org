@@ -11,7 +11,7 @@ import styles from './contents.css';
 class Constents extends Component {
   render() {
     return (
-      <div className={styles.constents}>
+      <div className={styles.contents}>
         <div className={styles.title}>
           <h2>
             {this.props.title}

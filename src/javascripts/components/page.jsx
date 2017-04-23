@@ -20,7 +20,7 @@ class Page extends Component {
   
   constructor(props) {
     super(props);
-    console.log('initial', this.props.id , this.props.params.id)
+    //console.log('initial', this.props.id , this.props.params.id)
     this.state = this.getDefaultState.bind(this)();
     this.getCurrentRange = this.getCurrentRange.bind(this);
     this.getCurrentData = this.getCurrentData.bind(this);    
@@ -44,7 +44,7 @@ class Page extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('nextProps::',nextProps.params.id)    
+    //console.log('nextProps::',nextProps.params.id)    
     this.setState({currentPage: nextProps.params.id});
   }
 
@@ -53,13 +53,13 @@ class Page extends Component {
   }
 
   render() {
-    console.log('paeg::currentPage::pre',this.state.currentPage)
+    //console.log('paeg::currentPage::pre',this.state.currentPage)
     var currentRange = this.getCurrentRange();
     var currentData = this.getCurrentData();
-    console.log('paeg::currentPage',this.state.currentPage,currentRange,currentData[0])
+    //console.log('paeg::currentPage',this.state.currentPage,currentRange,currentData[0])
     return (
       <div>
-        <div className="page">            
+        <div className="container">            
           <Container multiple={true} data={currentData}/>
           <Paginator currentPage={currentRange.from / NUM_POST_PAR_A_PAGE + 1} dataLength={data.length} postParARange={NUM_POST_PAR_A_PAGE} onChange={this.onPageChanged}/>        
         </div>
