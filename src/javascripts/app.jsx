@@ -17,7 +17,8 @@ import Menu from './components/menu.jsx';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
 import Page from './components/page.jsx';
-import Project from './components/project.jsx';
+import Post from './components/post.jsx';
+import Project from './components/project/index.jsx';
 import NotFound404 from './components/notfound404.jsx'
 
 import styles from "./app.css";
@@ -72,6 +73,10 @@ var routes = (
     </Route>
 
     <Redirect from="blog" to="/blog/1" component={ Inbox } />
+
+    <Route>
+      <Route path='post/:id' component={ Post } />
+    </Route>
 
     <Route path='*' component={ NotFound404 } />   
   </Route>

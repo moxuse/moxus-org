@@ -1,37 +1,35 @@
 /*
   post.jsx
 */
-
-import React, { Component } from 'react'
+import { filter } from 'lodash';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
-import MD from 'react-markdown';
+import PropTypes from 'prop-types';
 
-import styles from './post.css';
+import Container from './container.jsx';
+
+import data from '../../data.json'
 
 class Post extends Component {
+
   render() {
+    var currentData = filter(data, {path: this.props.params.id+".md"});
+    const unwraped = currentData;
     return (
-      <div className={styles.post}>
-        <div className={styles.title}>
-          <h2>
-            {this.props.title}
-          </h2>
-        </div>
-
-        <div className={styles.date}>
-          <h3>
-            {this.props.date}
-          </h3>
-        </div>
-
-        <div className={styles.content}>
-          <MD source={this.props.body} />
+      <div>
+        <div className="page">            
+          <Container multiple={false} data={unwraped} />
         </div>
       </div>
     )
   }
 }
 
+// Post.propTypes = {
+//   path: PropTypes.string
+// };
+
+// Post.defaultProps = {path: ""};
+
 export default Post;
 
-//

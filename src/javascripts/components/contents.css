@@ -1,0 +1,39 @@
+.contents {
+  color: #333333;
+  margin-top: 40px;
+  margin-bottom: 180px;
+}
+
+.contents .title {
+  font-size: 18px;
+}
+
+.contents .date {
+
+}
+
+.contents .date ::selection {
+  background:#eeff46;
+}
+
+.contents .content {
+  font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.contents .content img {
+  max-width: 100%;
+}
+
+.contents .content p {
+  line-height: 1.6em;
+}
+
+.contents .content a:link {
+ color: #4433cc; 
+ text-decoration: none;
+}
+.contents .content a:visited { color: #4444cc; }
+.contents .content a:hover { color: #6666cc; }
+.contents .content a:active { color: #4444cc; }
