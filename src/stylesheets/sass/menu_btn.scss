@@ -5,17 +5,16 @@ $light: #efefef;
 $color: #b3e5fc;
 
 @mixin btn($left, $top) {
-  z-index: 1000;
   width: 60px;
   height: 60px;
   top: $top;
   left: $left;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   transform: scale(1.25);
 }
 
 @mixin icon($height, $width) {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   position: absolute;
   height: $height;
   width: $width;
@@ -24,7 +23,7 @@ $color: #b3e5fc;
 }
 
 @mixin icon-before($height, $width, $top) {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   position: absolute;
   width: $width;
   height: $height;
@@ -34,7 +33,7 @@ $color: #b3e5fc;
 }
 
 @mixin icon-after($height, $width, $top) {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   position: absolute;
   width: $width;
   height: $height;
@@ -47,20 +46,20 @@ $color: #b3e5fc;
   @include btn(0px, 0px);
   
   .icon {
-    @include icon(3px, 30px);
+    @include icon(2px, 30px);
     
     &:before{
-      @include icon-before(3px, 30px, -10px);
+      @include icon-before(2px, 30px, -10px);
     }
     
     &:after{
-      @include icon-after(3px, 30px, 10px);
+      @include icon-after(2px, 30px, 10px);
     }
   }
   
   &.open {
     .icon {
-      transition-duration: 0.5s;
+      transition-duration: 0.3s;
       background: transparent;
       
       &:before{

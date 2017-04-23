@@ -13,6 +13,7 @@ import {
   hashHistory
 } from 'react-router'
 
+import Menu from './components/menu.jsx';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
 import Page from './components/page.jsx';
@@ -20,13 +21,20 @@ import Project from './components/project.jsx';
 import NotFound404 from './components/notfound404.jsx'
 
 import styles from "./app.css";
-console.log(styles)
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.onCloseMenu = this.onCloseMenu.bind(this);
+  }
+  onCloseMenu() {    
+    this.refs.header.setState({toggleMenu: false});
+  }
   render () {
     return (
-      <div className={styles.app}>
-        <Header />
+      <div className={styles.app}>                
+        <Menu onClose={this.onCloseMenu}/>
+        <Header ref="header"/>
         <main>
           {this.props.children}
         </main>

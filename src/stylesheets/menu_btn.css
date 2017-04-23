@@ -5,41 +5,41 @@
   height: 60px;
   top: 0px;
   left: 0px;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   transform: scale(1.25);
 }
 /* line 49, sass/menu_btn.scss */
 .btn12 .icon {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   position: absolute;
-  height: 3px;
+  height: 2px;
   width: 30px;
   top: 30px;
   background-color: #212121;
 }
 /* line 52, sass/menu_btn.scss */
 .btn12 .icon:before {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   position: absolute;
   width: 30px;
-  height: 3px;
+  height: 2px;
   background-color: #212121;
   content: "";
   top: -10px;
 }
 /* line 56, sass/menu_btn.scss */
 .btn12 .icon:after {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   position: absolute;
   width: 30px;
-  height: 3px;
+  height: 2px;
   background-color: #212121;
   content: "";
   top: 10px;
 }
 /* line 62, sass/menu_btn.scss */
 .btn12.open .icon {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   background: transparent;
 }
 /* line 66, sass/menu_btn.scss */

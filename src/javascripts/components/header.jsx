@@ -26,6 +26,11 @@ class Header extends Component {
 
   render() {
     const isOpen = this.state.toggleMenu ? 'open' : '';
+    if (isOpen) {
+      $('.menu').show();
+    } else {
+      $('.menu').hide();
+    }
     return (
       <div className={styles.header}>
         <div className={styles.title}>
@@ -44,12 +49,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-
-
-// <ul className={styles.menu}>
-// <li><Link to={`/`}>top</Link></li>
-// <li><Link to={`/cv/1`} id={1}>cv</Link></li>
-// <li><Link to={`/project`}>project</Link></li>
-// <li><Link to={`/blog/1`} id={1}>blog</Link></li>
-// </ul>
