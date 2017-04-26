@@ -10,7 +10,7 @@ import Footer from './footer.jsx';
 import Container from './container.jsx';
 import Paginator from './paginator.jsx';
 import ReactMixin from 'react-mixin';
-import { State } from 'react-router';
+import { State, History } from 'react-router';
 
 import data from '../../data.json'
 
@@ -73,6 +73,7 @@ Page.propTypes = {
 };
 
 ReactMixin.onClass(Page, State);
+ReactMixin.onClass(Page, History);
 
 Page.defaultProps = {data: data};
 

@@ -6,9 +6,8 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import PropTypes from 'prop-types';
 import ReactMixin from 'react-mixin';
-import { createLocation } from 'history';
 import { reactMixin } from 'react-mixin';
-import { State, Link, History } from 'react-router';
+import { State, Link, History, hashHistory } from 'react-router';
 
 import styles from './paginator.css';
 
@@ -45,7 +44,9 @@ class Paginator extends Component {
   }
 
   render() {
-    
+
+    const currentLocation = hashHistory.getCurrentLocation().pathname;
+
     const
       p = this.props,
       s = this.state,
@@ -79,8 +80,10 @@ class Paginator extends Component {
     const next_hiding = (max === s.currentPage) ? styles.hiding : '';
     const next_class_name = s.currentPage === p.max ? 'disabled' : '';
 
+    const notdisplaying = ('/' == currentLocation) ? styles.notdisplaying : '';
+    console.log('current-location:',currentLocation)
     return (
-      <nav className={styles.paginator}>
+      <nav className={`${styles.paginator} ${notdisplaying}`}>
         <ul className={`${styles.pagination} ${className}`}>
           <li className={`${styles.lists} ${prev_class_name} ${pev_hiding}`}>
             

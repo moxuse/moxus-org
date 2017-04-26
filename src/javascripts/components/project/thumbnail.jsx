@@ -10,9 +10,10 @@ import styles from './thumbnail.css';
 class Thumbnail extends Component {
   render() {
     const path_name = this.props.data.path.substr(0, this.props.data.path.length-3)
+    console.log('/post/',path_name);
     return (
       <div className={styles.thumbnail}>        
-        <Link to={`/post/${path_name}`}>
+        <Link to={`post/${path_name}`}>
           <img src={`../../images/thumb/${this.props.data.thumb}`} alt={this.props.data.title}/>
         </Link>
         <p className={styles.title}>

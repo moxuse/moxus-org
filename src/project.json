@@ -1,22 +1,72 @@
 [
   {
-    "title": "water flow test",
+    "title": "artsat-internet-radio-despatch",
+    "thumb": "radio-despatch.jpg",
+    "path": ""
+  },
+  {
+    "title": "nature-observer",
     "thumb": "tree-shoot-test.png",
-    "path": "2011-10-01-water_flow_test.md"
+    "path": ""
   },
   {
-    "title": "quantum composition",
+    "title": "geomagnetic-texture",
+    "thumb": "geomag_thumb.jpg",
+    "path": ""
+  },
+  {
+    "title": "ex-ice",
+    "thumb": "eicesumth-300x127.jpg",
+    "path": ""
+  },
+  {
+    "title": "quantum-composition",
     "thumb": "tumb_quantum.png",
-    "path": "2011-05-22-quantum-composition-added.md"
+    "path": ""
   },
   {
-    "title": "artsat internet radio",
+    "title": "artsat-internet-radio",
     "thumb": "asinrd_thum.jpg",
-    "path": "2010-12-21-artsat-internet-radio-2.md"
+    "path": ""
   },
   {
-    "title": "Untitled",
+    "title": "vector-sky-map",
+    "thumb": "P1000944_thum.jpg",
+    "path": "2010-09-19-vector-sky-map.md"
+  },
+  {
+    "title": "ice.gzk",
+    "thumb": "_dsc9260.jpg",
+    "path": ""
+  },
+  {
+    "title": "pachube.MKM",
+    "thumb": "dsc_0050_s.jpg",
+    "path": ""
+  },
+  {
+    "title": "untitled",
     "thumb": "untillted_w.jpg",
-    "path": "2010-04-12-untitled.md"
+    "path": ""
+  },
+  {
+    "title": "gillettean-altar",
+    "thumb": "gillette_w_p1.jpg",
+    "path": ""
+  },
+  {
+    "title": "gossamer-1",
+    "thumb": "img_4254.jpg",
+    "path": ""
+  },
+  {
+    "title": "dnd",
+    "thumb": "trees2.jpg",
+    "path": "2007-10-06-dnd.md"
+  },
+  {
+    "title": "fddg",
+    "thumb": "fddg_wp.jpg",
+    "path": ""
   }
 ]
