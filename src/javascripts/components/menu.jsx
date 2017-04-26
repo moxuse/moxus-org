@@ -32,7 +32,7 @@ class Menu extends Component {
       <div className={`menu ${styles.menu}`} ref='menu'>
         <ul>
           <li><Link to={`/`} onClick={this.onClick}>top</Link></li>
-          <li><Link to={`/cv/1`} onClick={this.onClick}>cv</Link></li>
+          <li><a href={`https://github.com/moxuse/cv/blob/master/README.md`} target='blank'>cv</a></li>
           <li><Link to={`/project`} onClick={this.onClick}>project</Link></li>
           <li><Link to={`/blog/1`} id={1} onClick={this.onClick}>blog</Link></li>
         </ul>
