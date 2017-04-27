@@ -8,8 +8,9 @@
     "build": "npm run sass && webpack -p",
     "watch": "npm run start",
     "sass": "compass compile src/stylesheets/sass/menu_btn.scss",
-    "start": "npm run build && webpack-dev-server --content-base /public",
-    "deploy": "npm run build && ./deploy.sh"
+    "start": "npm run build && npm run server",
+    "deploy": "npm run build && ./deploy.sh",
+    "server": "webpack-dev-server --content-base /public --historyApiFallback true"
   },
   "author": "moxus",
   "license": "MIT",

@@ -10,7 +10,7 @@ import {
   Redirect,
   IndexRoute,
   Link,
-  hashHistory
+  browserHistory
 } from 'react-router'
 
 import Menu from './components/menu.jsx';
@@ -83,7 +83,7 @@ var routes = (
 )
 
 ReactDOM.render(
-  <Router routes={routes} history={hashHistory} />,
+  <Router routes={routes} history={browserHistory} />,
   document.getElementById('app')
 );
 
