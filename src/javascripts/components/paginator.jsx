@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 import PropTypes from 'prop-types';
 import ReactMixin from 'react-mixin';
 import { reactMixin } from 'react-mixin';
-import { State, Link, History, hashHistory } from 'react-router';
+import { State, Link, History } from 'react-router';
 
 import styles from './paginator.css';
 
@@ -45,8 +45,8 @@ class Paginator extends Component {
 
   render() {
 
-    const currentLocation = hashHistory.getCurrentLocation().pathname;
-
+    const currentLocation = window.location.pathname;
+    //console.log(currentLocation);
     const
       p = this.props,
       s = this.state,
