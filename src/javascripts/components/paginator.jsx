@@ -39,7 +39,7 @@ class Paginator extends Component {
   }
 
   _onChange(page) {
-    console.log('pagenator::onchnage::newpage',page);
+    //console.log('pagenator::onchnage::newpage',page);
     this.props.onChange(page);
   }
 
@@ -81,7 +81,7 @@ class Paginator extends Component {
     const next_class_name = s.currentPage === p.max ? 'disabled' : '';
 
     const notdisplaying = ('/' == currentLocation) ? styles.notdisplaying : '';
-    console.log('current-location:',currentLocation)
+    
     return (
       <nav className={`${styles.paginator} ${notdisplaying}`}>
         <ul className={`${styles.pagination} ${className}`}>

@@ -12,9 +12,9 @@ import Paginator from './paginator.jsx';
 import ReactMixin from 'react-mixin';
 import { State, History } from 'react-router';
 
-import data from '../../data.json'
+import data from '../../data.json';
 
-const NUM_POST_PAR_A_PAGE = 4
+const NUM_POST_PAR_A_PAGE = 4;
 
 class Page extends Component {
   

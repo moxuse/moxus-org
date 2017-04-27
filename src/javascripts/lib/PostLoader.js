@@ -10,6 +10,7 @@ class PostLoader {
         } catch (error) {
           console.log('YAML PARSE ERROR in :',path ,error.message)
         }
+        res.path = path.slice(0,-3);
         resolve(res);
       })
     });

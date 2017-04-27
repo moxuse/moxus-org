@@ -2,7 +2,7 @@
   post.jsx
 */
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 class NotFound404 extends Component {

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 import Thumbnail from './thumbnail.jsx';
 
-import styles from './index.css'
+import styles from './index.css';
 
 import data from '../../../project.json';
 

@@ -13,8 +13,8 @@ import data from '../../data.json'
 class Post extends Component {
 
   render() {
-    var currentData = filter(data, {path: this.props.params.id+".md"});
-    const unwraped = currentData;
+    const unwraped = [{path: this.props.params.id+".md"}];
+    //const unwraped = currentData;
     return (
       <div>
         <div className="container">            

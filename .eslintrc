@@ -1,0 +1,39 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "semi": [2, "always"],
+    "no-extra-semi": 2,
+    "space-before-function-paren": [2, "never"],
+    "arrow-parens": [2, "always"],
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": "standard",
+  "ecmaFeatures": {
+    "modules": true,
+    "jsx": true,
+    "experimentalObjectRestSpread": true,
+  },
+  "globals": {
+    "it": true,
+    "describe": true,
+    "before": true,
+    "beforeEach": true,
+    "after": true,
+    "afterEach": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": [
+    "babel",
+    "standard",
+    "promise",
+    "react"
+  ]
+}

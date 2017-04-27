@@ -24,7 +24,7 @@ The “ARTSAT: Introduction” corner documenting research and development relat
 
 
 [![geomag_01](/images/project/geomag_01-575x1024.png)](/images/project/geomag_01.png) 
-[![geomag_00](/images/project/geomag_00-574x1024.png)](/images/project/geomag_00.png)
+[![geomag_00](/images/project/geomag_00-575x1024.png)](/images/project/geomag_00.png)
 
  
 

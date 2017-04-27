@@ -30,7 +30,7 @@ class Container extends Component {
       new PostLoader(item.path)
         .then((res) => {          
           const key = res.attributes.post_id + Date.now();
-          const contents = <Contents title={res.attributes.title} date={date} body={res.body} key={key} />;
+          const contents = <Contents title={res.attributes.title} date={date} body={res.body} key={key} path={res.path}/>;
             resolve(contents);
         });
     })  
