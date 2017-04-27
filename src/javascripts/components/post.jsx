@@ -4,7 +4,6 @@
 import { filter } from 'lodash';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import PropTypes from 'prop-types';
 
 import Container from './container.jsx';
 

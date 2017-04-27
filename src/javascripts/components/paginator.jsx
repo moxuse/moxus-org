@@ -87,7 +87,7 @@ class Paginator extends Component {
         <ul className={`${styles.pagination} ${className}`}>
           <li className={`${styles.lists} ${prev_class_name} ${pev_hiding}`}>
             
-              <Link to={'blog/' + previousPage} onClick={this.onClicked.bind(this, previousPage)}>   
+              <Link to={'/blog/' + previousPage} onClick={this.onClicked.bind(this, previousPage)}>   
                 <span aria-hidden="true">&laquo;</span>
                 <span className="sr-only">Prev</span>
               </Link>
@@ -99,14 +99,14 @@ class Paginator extends Component {
             return (
               <li key={page}
                 className={`${styles.lists} ${className} ${hiding}`}>
-                <Link to={'blog/' + page} onClick={this.onClicked.bind(this, page)}>
+                <Link to={'/blog/' + page} onClick={this.onClicked.bind(this, page)}>
                   {page}
                 </Link>
               </li>
             );
           }, this)}
           <li className={`${styles.lists} ${next_class_name} ${next_hiding}`}>
-            <Link to={'blog/' + nextPage} onClick={this.onClicked.bind(this, nextPage)}>
+            <Link to={'/blog/' + nextPage} onClick={this.onClicked.bind(this, nextPage)}>
               <span className="sr-only">Next</span>
               <span aria-hidden="true">&raquo;</span>
             </Link>
