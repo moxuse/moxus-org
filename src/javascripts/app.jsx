@@ -10,8 +10,11 @@ import {
   Redirect,
   IndexRoute,
   Link,
-  browserHistory
-} from 'react-router'
+  //browserHistory,
+  //createHistory,
+  useRouterHistory
+} from 'react-router';
+import { createHistory } from 'history';
 
 import Menu from './components/menu.jsx';
 import Header from './components/header.jsx';
@@ -82,8 +85,10 @@ var routes = (
   </Route>
 )
 
+const appHistory = useRouterHistory(createHistory)({ queryKey: false });
+
 ReactDOM.render(
-  <Router routes={routes} history={browserHistory} />,
+  <Router routes={routes} history={appHistory} />,
   document.getElementById('app')
 );
 

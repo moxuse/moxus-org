@@ -10,14 +10,14 @@
     "sass": "compass compile src/stylesheets/sass/menu_btn.scss",
     "start": "npm run build && npm run server",
     "deploy": "npm run build && ./deploy.sh",
-    "server": "webpack-dev-server --content-base /public --historyApiFallback true"
+    "server": "webpack-dev-server --content-base public --historyApiFallback true"
   },
   "author": "moxus",
   "license": "MIT",
   "dependencies": {
     "front-matter": "^2.1.2",
     "fs": "0.0.1-security",
-    "history": "^3.0.0",
+    "history": "^2.0.1",
     "jquery": "^3.2.1",
     "js-yaml": "^3.8.3",
     "lodash": "^4.17.4",
