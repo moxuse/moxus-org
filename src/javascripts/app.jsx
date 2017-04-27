@@ -13,7 +13,6 @@ import {
   hashHistory
 } from 'react-router'
 
-
 import Menu from './components/menu.jsx';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
@@ -23,8 +22,6 @@ import Project from './components/project/index.jsx';
 import NotFound404 from './components/notfound404.jsx'
 
 import styles from "./app.css";
-
-
 
 class App extends Component {
   constructor(props) {
