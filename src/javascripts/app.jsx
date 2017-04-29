@@ -22,6 +22,7 @@ import Post from './components/post.jsx';
 import Project from './components/project/index.jsx';
 import NotFound404 from './components/notfound404.jsx'
 
+import "normalize/normalize.css";
 import styles from "./app.css";
 
 class App extends Component {
