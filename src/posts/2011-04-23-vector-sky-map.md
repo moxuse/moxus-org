@@ -8,6 +8,8 @@ categories:  []
 
 Installation 2010
 
+<iframe src="https://player.vimeo.com/video/14599603" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 ![](/images/project/P1000944.jpg)
 
 ![](/images/project/P1010016.jpg)
@@ -17,7 +19,6 @@ This piece is collaborated work with Yoshito ONISHI (artist).
 Incheon Airport is one of the biggest hubs in Asia. Quite a few number of planes take off and land day and night everyday. Planes look almost the same but each has a different route and destination with the people from various parts of the world on board. If we observed each plane carefully, could we get to know the destination? Through this work, we try to find out the destinations of the planes by tracing and calculating the route of each just before landing or just after taking off.
 
 ![](/images/project/P1000882.jpg)
-
 
 
 [コンセプト]

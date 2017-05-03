@@ -2,7 +2,7 @@
   {
     "title": "artsat-internet-radio-despatch",
     "thumb": "radio-despatch.jpg",
-    "path": "2011-05-23-artsat-internet-radio.md"
+    "path": "2011-01-01-artsat-internet-radio-despatch.md"
   },
   {
     "title": "nature-observer",
@@ -37,12 +37,14 @@
   {
     "title": "ice.gzk",
     "thumb": "_dsc9260.jpg",
-    "path": ""
+    "path": "",
+    "ex_path": "http://ice.gzk.jp"
   },
   {
     "title": "pachube.MKM",
     "thumb": "dsc_0050_s.jpg",
-    "path": ""
+    "path": "",
+    "ex_path": "http://www.ntticc.or.jp/en/feature/2009/Openspace2009/Works/pachube.html"
   },
   {
     "title": "untitled",
