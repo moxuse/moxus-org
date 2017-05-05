@@ -1,0 +1,19 @@
+/*
+  footer.css
+*/
+
+.footer {
+  margin: 0 auto;
+  max-width: 1440px;
+  height: 200px;
+  color: #888;
+}
+
+.footer p {
+  margin-top: 40px;
+  margin-bottom: 120px;
+}
+
+.footer hr {
+  width: 100%;
+}

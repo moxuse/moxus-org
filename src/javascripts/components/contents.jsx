@@ -12,7 +12,7 @@ import styles from './contents.css';
 class Constents extends Component {
   render() {
     return (
-      <div className={styles.contents}>
+      <div className={`${styles.contents}`}>
         <div className={styles.title}>
           <Link to={`/post/${this.props.path}`}>
           <h2>
