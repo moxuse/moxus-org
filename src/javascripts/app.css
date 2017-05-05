@@ -16,6 +16,10 @@ p {
   word-wrap: break-word;
 }
 
+iframe {
+  max-width: 100%;
+}
+
 blockquote {
   margin-left: 0;
   padding: 0 1em;
