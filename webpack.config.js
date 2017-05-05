@@ -10,10 +10,11 @@ module.exports = {
     path: __dirname + '/public',
     filename: 'javascripts/[name].js'
   },
-  // resolve : {
-  //   alias: {
-  //   }
-  // },
+  resolve : {
+    alias: {
+      normalize: __dirname + '/node_modules/normalize.css/'
+    }
+  },
   module: {
     loaders: [
       {
@@ -34,6 +35,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
+              localIdentName: '[name]__[local]--[hash:base64:5]',
               includePaths: ["node_modules/flexboxgrid"]
             }
           } 
@@ -74,7 +76,7 @@ module.exports = {
     console: true,
   },
 
-  devtool: 'inline-source-map',
+  //devtool: 'inline-source-map',
 
   plugins: [
     new ExtractTextPlugin("[name].css"),
@@ -96,9 +98,9 @@ module.exports = {
         ]
       }
     ),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   'process.env.NODE_ENV': JSON.stringify('production')
-    // })
+    new webpack.optimize.UglifyJsPlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
   ],
   node: {
     fs: "empty"
