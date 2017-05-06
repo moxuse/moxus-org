@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Gillette/An Altar"
 permalink: http://moxus.org/project/gillettean-altar
 post_id: 837

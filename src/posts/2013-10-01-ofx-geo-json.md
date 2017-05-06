@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "ofxGeoJSON"
 permalink: http://moxus.org/project/ofx-geo-json
 post_id: 7003

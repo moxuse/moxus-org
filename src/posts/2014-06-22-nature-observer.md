@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Nature Observer"
 permalink: http://moxus.org/project/nature-observer
 post_id: 1437

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Geomagnetic Texture"
 permalink: http://moxus.org/project/geomagnetic-texture
 post_id: 1342

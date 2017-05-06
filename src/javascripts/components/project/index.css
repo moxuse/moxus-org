@@ -10,3 +10,10 @@
 .grid {
   width: 100%;
 }
+
+
+@media screen and (max-width: 480px) {
+  .project h2{
+    margin-bottom: 50px;
+  }
+}

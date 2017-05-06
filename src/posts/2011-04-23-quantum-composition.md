@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Quantum Composition"
 permalink: http://moxus.org/project/quantum-composition
 post_id: 849

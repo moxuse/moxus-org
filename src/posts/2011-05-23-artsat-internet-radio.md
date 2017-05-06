@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "ARTSAT Internet Radio"
 permalink: http://moxus.org/project/artsat-internet-radio
 post_id: 891

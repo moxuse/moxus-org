@@ -11,6 +11,7 @@ import styles from './contents.css';
 
 class Constents extends Component {
   render() {
+    const hide_date = (this.props.layout == 'project') ? styles.hiding : '';
     return (
       <div className={`${styles.contents}`}>
         <div className={styles.title}>
@@ -21,7 +22,7 @@ class Constents extends Component {
           </Link>
         </div>
 
-        <div className={styles.date}>
+        <div className={`${styles.date} ${hide_date}`}>
           <h3>
             {this.props.date}
           </h3>

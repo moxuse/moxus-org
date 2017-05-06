@@ -8,8 +8,8 @@
   font-size: 18px;
 }
 
-.contents .date {
-
+.contents .date.hiding {
+  display: none;
 }
 
 .contents .date ::selection {

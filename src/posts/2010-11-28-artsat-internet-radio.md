@@ -6,7 +6,6 @@ post_id: 772
 categories: 
 - DataArt
 - Satellite
-- SuperCollider
 - SuperCollider3
 - ストリーミングライブ
 ---

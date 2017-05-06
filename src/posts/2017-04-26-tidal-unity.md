@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "TidalUnity"
 permalink: http://moxus.org/project/tidal-unity
 post_id: 7005

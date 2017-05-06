@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Radio Despatch"
 permalink: http://moxus.org/artsat-internet-radio-despatch
 post_id: 7008

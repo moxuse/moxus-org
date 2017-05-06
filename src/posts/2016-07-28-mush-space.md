@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Mush Space"
 permalink: http://moxus.org/project/mush-space
 post_id: 7004

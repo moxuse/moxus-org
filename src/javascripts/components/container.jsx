@@ -28,9 +28,9 @@ class Container extends Component {
         date = item.path.slice(0,10);
       }
       new PostLoader(item.path)
-        .then((res) => {          
+        .then((res) => {
           const key = res.attributes.post_id + Date.now();
-          const contents = <Contents title={res.attributes.title} date={date} body={res.body} key={key} path={res.path}/>;
+          const contents = <Contents title={res.attributes.title} date={date} body={res.body} key={key} path={res.path} layout={res.attributes.layout}/>;
             resolve(contents);
         });
     })  

@@ -7,7 +7,6 @@ categories:
 - Exhibition
 - Generative Image
 - Programming
-- SuperCollider
 - SuperCollider3
 - テータロガー
 - 雑記

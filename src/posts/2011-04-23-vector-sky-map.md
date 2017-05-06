@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "vector sky map"
 permalink: http://moxus.org/project/vector-sky-map
 post_id: 859

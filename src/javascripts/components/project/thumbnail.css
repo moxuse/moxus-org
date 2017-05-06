@@ -13,3 +13,13 @@
   font-size: 8px;
   margin-top: 2px;
 }
+
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
+  .thumbnail img {
+    max-width: 100%;
+  }
+}

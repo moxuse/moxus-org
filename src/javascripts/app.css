@@ -59,3 +59,20 @@ main .subtitle h1 {
 .app .manu.menu__state--open {
   display: block;
 }
+
+@media screen and (max-width: 768px) {
+  .app {
+    width: 87%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app {
+    width: 88%;
+  }
+
+  main .subtitle h1 {
+    margin-bottom: 50px;
+  }
+}
+
