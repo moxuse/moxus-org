@@ -1,5 +1,5 @@
 /*
-  post.jsx
+  constents.jsx
 */
 
 import React, { Component } from 'react'
