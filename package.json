@@ -4,7 +4,7 @@
   "description": "moxus-org",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rm -fr ./public ./.tmp",
     "build": "npm run clean && npm run sass && webpack -p",
     "watch": "npm run start",
