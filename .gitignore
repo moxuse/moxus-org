@@ -1,7 +1,8 @@
-node_modules/
-public/
+.tmp
+node_modules
+/public
 .sass-cache/
-
+npm-debug.log
 deploy.sh
 .DS_Store
-
+vendor/bundle/

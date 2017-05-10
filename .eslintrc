@@ -2,22 +2,26 @@
   "parser": "babel-eslint",
   "rules": {
     "semi": [2, "always"],
+    "babel/semi": [2, "always"],
     "no-extra-semi": 2,
+    "semi-spacing": [2, { "before": false, "after": true }],
     "space-before-function-paren": [2, "never"],
     "arrow-parens": [2, "always"],
-    "react/jsx-uses-react": 1,
-    "react/jsx-uses-vars": 1
+    "generator-star-spacing": [2, { "before": false, "after": true }]
   },
   "env": {
     "es6": true,
     "node": true,
     "browser": true
   },
-  "extends": "standard",
+  "extends": [
+    "plugin:promise/recommended",
+    "standard"
+  ],
   "ecmaFeatures": {
     "modules": true,
     "jsx": true,
-    "experimentalObjectRestSpread": true,
+    "experimentalObjectRestSpread": true
   },
   "globals": {
     "it": true,

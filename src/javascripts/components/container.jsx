@@ -1,12 +1,12 @@
 /*
   container.jsx
 */
-import React, { Component } from 'react'
-import Contents from './contents.jsx'
+import React, { Component } from 'react';
+import Contents from './contents.jsx';
 import PropTypes from 'prop-types';
 import ReactMixin from 'react-mixin';
 import { History } from 'react-router';
-import PostLoader from '../lib/PostLoader'
+import PostLoader from '../lib/PostLoader';
 
 class Container extends Component {
   constructor(props) {
@@ -38,9 +38,11 @@ class Container extends Component {
   componentDidMount() {
     this.assigin();
   }
+
   componentWillReceiveProps() {
     this.assigin();
   }
+
   assigin() {
     //this.setState({rows: []});
     let new_rows = [];

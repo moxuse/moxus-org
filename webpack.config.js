@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const PRODUCTION = process.env.NODE_ENV === 'production';
+
 module.exports = {
   entry: {
     app: './src/javascripts/app.jsx'
@@ -74,11 +76,17 @@ module.exports = {
 
   node: {
     console: true,
+    fs: "empty"
   },
 
   //devtool: 'inline-source-map',
 
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      },
+    }),
     new ExtractTextPlugin("[name].css"),
     new webpack.ProvidePlugin({
       "$":"jquery",
@@ -94,17 +102,24 @@ module.exports = {
           '.DS_Store',
           '.gitkeep',
           'javascripts/components/**/*',
-          'javascripts/index.jsx'
+          'javascripts/lib/*',
+          'stylesheets/sass/*',
+          'javascripts/app.jsx'
         ]
       }
     ),
-    new webpack.optimize.UglifyJsPlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    })
-  ],
-  node: {
-    fs: "empty"
-  }
+    ...(
+      PRODUCTION ? [
+        new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            warnings: false,
+          },
+        }),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.DedupePlugin(),
+      ] : []
+    )
+  ]
 };
 
 //"rmn8810
