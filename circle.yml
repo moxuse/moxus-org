@@ -17,7 +17,7 @@ dependencies:
   pre:
     - gem install bundler --pre
   override:
-    - bundle install:
+    - bundle install && npm install:
         timeout: 120
 
 compile:
