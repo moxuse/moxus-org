@@ -1,0 +1,18 @@
+machine:
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+  node:
+    version: 7.9.0
+  ruby:
+    version: 2.3.2
+  timezone:
+    Asia/Tokyo
+
+dependencies:
+  pre:
+    - gem install bundler --pre
+  override:
+    - bundle install:
+        timeout: 120
+test:
+  
