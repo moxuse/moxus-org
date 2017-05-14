@@ -2,7 +2,8 @@
   header.jsx
 */
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
 import $ from 'jquery';
@@ -13,6 +14,7 @@ class Header extends Component {
     super(props);
     this.state = this.getDefaultStates();
     this.onMenuClick = this.onMenuClick.bind(this);
+    this.onMenuChange = this.onMenuChange.bind(this);
   }
   
   getDefaultStates() {
@@ -24,12 +26,19 @@ class Header extends Component {
     this.forceUpdate();
   }
 
+  onMenuChange(state) {
+    if (this.props.onMenuChange) {
+      this.props.onMenuChange(state);
+    }
+  }
+
   render() {
     const isOpen = this.state.toggleMenu ? 'open' : '';
     if (isOpen) {
       $('.menu').show();
+      this.onMenuChange('open');
     } else {
-      $('.menu').hide();
+      this.onMenuChange('close');
     }
     return (
       <div className={styles.header}>
@@ -47,5 +56,10 @@ class Header extends Component {
     )
   }
 }
+
+
+Header.propTypes = {
+  onMenuChange: PropTypes.func.isRequired
+};
 
 export default Header;

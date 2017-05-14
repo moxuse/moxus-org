@@ -29,15 +29,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.onCloseMenu = this.onCloseMenu.bind(this);
+    this.onMenuChange = this.onMenuChange.bind(this);
   }
   onCloseMenu() {    
     this.refs.header.setState({toggleMenu: false});
   }
+  onMenuChange(state) {
+    if (this.refs.menu) {
+      this.refs.menu.setChangeState(state);
+    }
+  }
   render () {
     return (
       <div className={styles.app}>          
-        <Menu onClose={this.onCloseMenu}/>
-        <Header ref="header"/>
+        <Menu onClose={this.onCloseMenu} ref="menu" />
+        <Header onMenuChange={this.onMenuChange} ref="header" />
         <main>
           {this.props.children}
         </main>
