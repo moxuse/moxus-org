@@ -3,11 +3,9 @@
 */
 
 import React, { Component } from 'react';
-import { render } from 'react-dom';
+// import { render } from 'react-dom';
 import PropTypes from 'prop-types';
-import ReactMixin from 'react-mixin';
-import { reactMixin } from 'react-mixin';
-import { State, Link, History } from 'react-router';
+import { Link } from 'react-router';
 
 import styles from './paginator.css';
 
@@ -21,7 +19,7 @@ class Paginator extends Component {
   }
 
   getDefaultState() {
-    return { currentPage: this.props.currentPage }
+    return { currentPage: this.props.currentPage };
   }
 
   getPageMax() {
@@ -39,20 +37,18 @@ class Paginator extends Component {
   }
 
   _onChange(page) {
-    //console.log('pagenator::onchnage::newpage',page);
+    // console.log('pagenator::onchnage::newpage',page);
     this.props.onChange(page);
   }
 
   render() {
-
     const currentLocation = window.location.pathname;
-    //console.log(currentLocation);
-    const
-      p = this.props,
-      s = this.state,
-      max = this.getPageMax();
-    var className = this.props.className || '',
-      skip = 0;
+    // console.log(currentLocation);
+    const p = this.props;
+    const s = this.state;
+    const max = this.getPageMax();
+    var className = this.props.className || '';
+    var skip = 0;
 
     if (s.currentPage > p.maxVisible - 1 && s.currentPage < max) {
       skip = s.currentPage - p.maxVisible + 1;
@@ -65,37 +61,34 @@ class Paginator extends Component {
       return skip + i + 1;
     });
 
-    var previousPage = 1; 
+    var previousPage = 1;
     if (s.currentPage > 1) {
       previousPage = s.currentPage - 1;
-    };
+    }
     var nextPage = 1;
     if (s.currentPage < max) {
-      nextPage = s.currentPage + 1
+      nextPage = s.currentPage + 1;
     }
-
-    const pev_hiding = (1 === s.currentPage) ? styles.hiding : '';
+    const pev_hiding = (s.currentPage === 1) ? styles.hiding : '';
     const prev_class_name = s.currentPage === 1 ? 'disabled' : '';
 
     const next_hiding = (max === s.currentPage) ? styles.hiding : '';
     const next_class_name = s.currentPage === p.max ? 'disabled' : '';
 
-    const notdisplaying = ('/' == currentLocation) ? styles.notdisplaying : '';
-    
+    const notdisplaying = (currentLocation === '/') ? styles.notdisplaying : '';
+
     return (
       <nav className={`${styles.paginator} ${notdisplaying}`}>
         <ul className={`${styles.pagination} ${className}`}>
           <li className={`${styles.lists} ${prev_class_name} ${pev_hiding}`}>
-            
-              <Link to={'/blog/' + previousPage} onClick={this.onClicked.bind(this, previousPage)}>   
-                <span aria-hidden="true">&laquo;</span>
-                <span className="sr-only">Prev</span>
-              </Link>
-            
+            <Link to={'/blog/' + previousPage} onClick={this.onClicked.bind(this, previousPage)}>
+              <span aria-hidden="true">&laquo;</span>
+              <span className="sr-only">Prev</span>
+            </Link>
           </li>
           {iterator.map(function(page) {
             const className = s.currentPage === page ? styles.active : '';
-            const hiding = (0 >= page) ? styles.hiding : '';
+            const hiding = (page <= 0) ? styles.hiding : '';
             return (
               <li key={page}
                 className={`${styles.lists} ${className} ${hiding}`}>
@@ -116,15 +109,13 @@ class Paginator extends Component {
     );
   }
 }
+
 Paginator.propTypes = {
   dataLength: PropTypes.number.isRequired,
   postParARange: PropTypes.number.isRequired,
   maxVisible: PropTypes.number,
   onChange: PropTypes.func.isRequired
 };
-
-ReactMixin.onClass(Paginator, State);
-ReactMixin.onClass(Paginator, History);
 
 Paginator.defaultProps = {
   currentPage: 0,

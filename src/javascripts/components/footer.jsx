@@ -2,15 +2,14 @@
   footer.jsx
 */
 
-import React, { Component } from 'react'
-import { render } from 'react-dom';
+import React, { Component } from 'react';
+// import { render } from 'react-dom';
 
-import styles from './footer.css'
+import styles from './footer.css';
 
 class Footer extends Component {
-
   render() {
-    var nextClick = this.nextPage;
+    // var nextClick = this.nextPage;
     return (
       <div className={styles.footer}>
         <hr></hr>
@@ -18,7 +17,7 @@ class Footer extends Component {
           © 2006-17 moxus.org
         </p>
       </div>
-    )
+    );
   }
 }
 

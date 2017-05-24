@@ -2,8 +2,8 @@
   constents.jsx
 */
 
-import React, { Component } from 'react'
-import { render } from 'react-dom';
+import React, { Component } from 'react';
+// import { render } from 'react-dom';
 import { Link } from 'react-router';
 import MD from 'react-markdown';
 
@@ -11,7 +11,7 @@ import styles from './contents.css';
 
 class Constents extends Component {
   render() {
-    const hide_date = (this.props.layout == 'project') ? styles.hiding : '';
+    const hide_date = (this.props.layout === 'project') ? styles.hiding : '';
     return (
       <div className={`${styles.contents}`}>
         <div className={styles.title}>
@@ -32,7 +32,7 @@ class Constents extends Component {
           <MD source={this.props.body} />
         </div>
       </div>
-    )
+    );
   }
 }
 

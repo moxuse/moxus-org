@@ -2,15 +2,15 @@
   menu.jsx
 */
 
-import React, { Component } from 'react'
-import { render } from 'react-dom';
+import React, { Component } from 'react';
+// import { render } from 'react-dom';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import {
-  Router,
-  Route,
+  // Router,
+  // Route,
   Link
-} from 'react-router'
+} from 'react-router';
 import { TweenLite } from 'gsap';
 
 import styles from './menu.css';
@@ -22,21 +22,20 @@ class Menu extends Component {
     this.setChangeState = this.setChangeState.bind(this);
   }
 
-  onClick () {
+  onClick() {
     this.props.onClose();
-    
-    $('.menu_btn').removeClass('open');    
+    $('.menu_btn').removeClass('open');
   }
 
-  setChangeState (state) {
-    switch(state) {
+  setChangeState(state) {
+    switch (state) {
       case 'open':
         TweenLite.set(this.refs.menu, {opacity: 0});
         TweenLite.to(this.refs.menu, 0.6, {
           opacity: 1,
           ease: 'Power2.easeOut'
         });
-        
+
         $(this.refs.menu_list.children).each((i, $item) => {
           TweenLite.set($item, {y: 80, opacity: 0});
           TweenLite.to($item, 0.45, {
@@ -44,8 +43,8 @@ class Menu extends Component {
             opacity: 1,
             delay: (i * 0.03),
             ease: 'Power2.easeInOut'
-          });  
-        });        
+          });
+        });
         break;
 
       case 'close':
@@ -65,7 +64,7 @@ class Menu extends Component {
             opacity: 0,
             delay: (i * 0.03),
             ease: 'Power2.easeInOut'
-          });  
+          });
         });
         break;
       default:
@@ -83,7 +82,7 @@ class Menu extends Component {
           <li><Link to={`/blog/1`} id={1} onClick={this.onClick}>blog</Link></li>
         </ul>
       </div>
-    )
+    );
   }
 }
 
@@ -91,8 +90,8 @@ export default Menu;
 
 Menu.propTypes = {
   onClose: PropTypes.func.isRequired
-}
+};
 
 Menu.defaultProps = {
   onClose: undefined
-}
+};

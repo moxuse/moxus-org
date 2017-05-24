@@ -4,7 +4,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { render } from 'react-dom';
+// import { render } from 'react-dom';
 import { Link } from 'react-router';
 import $ from 'jquery';
 import styles from './header.css';
@@ -16,7 +16,7 @@ class Header extends Component {
     this.onMenuClick = this.onMenuClick.bind(this);
     this.onMenuChange = this.onMenuChange.bind(this);
   }
-  
+
   getDefaultStates() {
     return {toggleMenu: false};
   }
@@ -43,7 +43,7 @@ class Header extends Component {
     return (
       <div className={styles.header}>
         <div className={styles.title}>
-          <h1>          
+          <h1>
             <Link to={`/`}>moxus.org</Link>
           </h1>
           <div className={styles.menu_btn_wrap}>
@@ -53,10 +53,9 @@ class Header extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
-
 
 Header.propTypes = {
   onMenuChange: PropTypes.func.isRequired

@@ -3,7 +3,7 @@
 */
 
 import React, { Component } from 'react';
-import { render } from 'react-dom';
+// import { render } from 'react-dom';
 
 class NotFound404 extends Component {
   render() {
@@ -13,7 +13,7 @@ class NotFound404 extends Component {
           PAGE NOT FOUND
         </h2>
       </div>
-    )
+    );
   }
 }
 

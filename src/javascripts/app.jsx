@@ -2,17 +2,15 @@
   app.jsx
 */
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {
   Router,
   Route,
   Redirect,
   IndexRoute,
-  Link,
   browserHistory
 } from 'react-router';
-import { createHistory } from 'history';
 
 import Menu from './components/menu.jsx';
 import Header from './components/header.jsx';
@@ -20,10 +18,10 @@ import Footer from './components/footer.jsx';
 import Page from './components/page.jsx';
 import Post from './components/post.jsx';
 import Project from './components/project/index.jsx';
-import NotFound404 from './components/notfound404.jsx'
+import NotFound404 from './components/notfound404.jsx';
 
-import "normalize/normalize.css";
-import styles from "./app.css";
+import 'normalize/normalize.css';
+import styles from './app.css';
 
 class App extends Component {
   constructor(props) {
@@ -31,7 +29,7 @@ class App extends Component {
     this.onCloseMenu = this.onCloseMenu.bind(this);
     this.onMenuChange = this.onMenuChange.bind(this);
   }
-  onCloseMenu() {    
+  onCloseMenu() {
     this.refs.header.setState({toggleMenu: false});
   }
   onMenuChange(state) {
@@ -39,9 +37,9 @@ class App extends Component {
       this.refs.menu.setChangeState(state);
     }
   }
-  render () {
+  render() {
     return (
-      <div className={styles.app}>          
+      <div className={styles.app}>
         <Menu onClose={this.onCloseMenu} ref="menu" />
         <Header onMenuChange={this.onMenuChange} ref="header" />
         <main>
@@ -54,8 +52,8 @@ class App extends Component {
 }
 
 class Inbox extends Component {
-  render () {
-    //console.log('Index::props.children',this.props.children)
+  render() {
+    // console.log('Index::props.children',this.props.children)
     return (
       <div className={styles.subtitle}>
         <h1>
@@ -86,14 +84,13 @@ var routes = (
       <Route path='post/:id' component={ Post } />
     </Route>
 
-    <Route path='*' component={ NotFound404 } />   
+    <Route path='*' component={ NotFound404 } />
   </Route>
-)
+);
 
 ReactDOM.render(
   <Router routes={routes} history={browserHistory} />,
   document.getElementById('app')
 );
-
 
 export default App;

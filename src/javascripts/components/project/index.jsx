@@ -2,10 +2,10 @@
   post.jsx
 */
 
-import React, { Component } from 'react'
-import { render } from 'react-dom';
+import React, { Component } from 'react';
+// import { render } from 'react-dom';
 import PropTypes from 'prop-types';
-import {Grid, Row, Col} from 'react-flexbox-grid';
+import {Grid, Row} from 'react-flexbox-grid';
 import Thumbnail from './thumbnail.jsx';
 
 import styles from './index.css';
@@ -16,13 +16,13 @@ class Project extends Component {
   makeGrid() {
     let grid = [];
     let col = [];
-    this.props.data.map((item , i) => {
+    this.props.data.map((item, i) => {
       col.push(<Thumbnail type="row" data={item} />);
-      if (2 == i%3 || i === this.props.data.length - 1) {
+      if (i % 3 === 2 || i === this.props.data.length - 1) {
         grid.push(col);
         col = [];
       }
-    })
+    });
     return grid;
   }
 
@@ -39,7 +39,7 @@ class Project extends Component {
           </Row>
         </Grid>
       </div>
-      )
+    );
   }
 }
 
@@ -51,4 +51,4 @@ Project.propTypes = {
 
 Project.defaultProps = {
   data: data
-}
+};

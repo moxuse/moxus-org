@@ -12,7 +12,7 @@ module.exports = {
     path: __dirname + '/public',
     filename: 'javascripts/[name].js'
   },
-  resolve : {
+  resolve: {
     alias: {
       normalize: __dirname + '/node_modules/normalize.css/'
     }
@@ -23,16 +23,18 @@ module.exports = {
         test: /\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
-      },{
+      },
+      {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ["es2015", "stage-0"]
         }
-      }, { 
+      }, 
+      {
         test: /\.css$/, 
         use: [ 
-          {loader: 'style-loader'}, 
+          {loader: 'style-loader'},
           {
             loader: 'css-loader',
             options: {
@@ -40,13 +42,14 @@ module.exports = {
               localIdentName: '[name]__[local]--[hash:base64:5]',
               includePaths: ["node_modules/flexboxgrid"]
             }
-          } 
+          }
         ]
-      },{ 
+      },
+      {
         test: /\.jpe?g$|\.gif$|\.png$/i,
         loader: "file-loader" 
       },
-      { 
+      {
         test: /\.json$/,
         loader: "json-loader" 
       },
@@ -54,14 +57,14 @@ module.exports = {
         test: /\.yaml$/,
         use: [
           'file-loader',
-          'json-loader',          
+          'json-loader',         
           'yaml-loader'
         ]
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({ 
-          fallback: 'style-loader', 
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
           use: 'css-loader!sass-loader'
         })
       },
@@ -71,7 +74,7 @@ module.exports = {
           'markdown-with-front-matter-loader'
         ]
       }
-    ],
+    ]
   },
 
   node: {
@@ -79,25 +82,25 @@ module.exports = {
     fs: "empty"
   },
 
-  //devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
 
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      },
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+      }
     }),
     new ExtractTextPlugin("[name].css"),
     new webpack.ProvidePlugin({
-      "$":"jquery",
-      "jQuery":"jquery"
+      "$": "jquery",
+      "jQuery": "jquery"
     }),
     new copyWebpackPlugin(
       [
         { from: './src/', to: './' }
       ],
       {
-        ignore: 
+        ignore:
         [
           '.DS_Store',
           '.gitkeep',
@@ -112,14 +115,12 @@ module.exports = {
       PRODUCTION ? [
         new webpack.optimize.UglifyJsPlugin({
           compress: {
-            warnings: false,
-          },
+            warnings: false
+          }
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.DedupePlugin()
       ] : []
     )
   ]
 };
-
-//"rmn8810

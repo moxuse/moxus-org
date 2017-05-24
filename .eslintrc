@@ -2,6 +2,7 @@
   "parser": "babel-eslint",
   "rules": {
     "semi": [2, "always"],
+    "camelcase": 0,
     "no-extra-semi": 2,
     "space-before-function-paren": [2, "never"],
     "arrow-parens": [2, "always"],
