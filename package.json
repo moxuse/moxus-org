@@ -6,11 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rm -fr ./public ./.tmp",
-    "build": "npm run clean && npm run sass && webpack -p",
+    "build": "npm run clean && npm run sass && webpack",
+    "production" : "npm run clean && NODE_ENV=production webpack",
     "watch": "npm run start",
     "sass": "bundle exec compass compile src/stylesheets/sass/menu_btn.scss",
     "start": "npm run build && npm run server",
-    "deploy": "npm run build && ./deploy.sh",
+    "deploy": "npm run production && ./deploy.sh",
     "server": "webpack-dev-server --content-base public --historyApiFallback true"
   },
   "author": "moxus",
@@ -63,5 +64,6 @@
     "webpack-dev-server": "^2.4.2",
     "webpack-ssh-deploy-plugin": "0.0.1",
     "yaml-loader": "^0.4.0"
-  }
+  },
+  "repository": "git@github.com:moxuse/moxus-org.git"
 }
