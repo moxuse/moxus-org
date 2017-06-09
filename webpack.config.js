@@ -82,7 +82,7 @@ module.exports = {
     fs: "empty"
   },
 
-  // devtool: 'inline-source-map',
+  devtool: PRODUCTION ? false : 'inline-source-map',
 
   plugins: [
     new webpack.DefinePlugin({
