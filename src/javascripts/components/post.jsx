@@ -15,7 +15,7 @@ class Post extends Component {
     return (
       <div>
         <div className="container">
-          <Container multiple={false} data={unwraped} />
+          <Container multiple={false} currentData={unwraped} />
         </div>
       </div>
     );
