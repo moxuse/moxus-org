@@ -12,7 +12,7 @@ import { State, History } from 'react-router';
 
 import data from '../../data.json';
 
-const NUM_POST_PAR_A_PAGE = 4;
+const NUM_POST_PAR_A_PAGE = 5;
 
 class Page extends Component {
   constructor(props) {
@@ -29,14 +29,13 @@ class Page extends Component {
 
   getCurrentRange() {
     const from = (this.state.currentPage - 1) * NUM_POST_PAR_A_PAGE;
-    const to = from + NUM_POST_PAR_A_PAGE;
+    const to = from + NUM_POST_PAR_A_PAGE - 1;
     return {from: from, to: to};
   }
 
   getCurrentData() { // generate datas for each page..
     const from = this.getCurrentRange().from;
     const to = this.getCurrentRange().to;
-    // console.log('Pge::getCurrentData: ',data, from, to);
     return data.slice(from, to);
   }
 
@@ -53,11 +52,11 @@ class Page extends Component {
     // console.log('paeg::currentPage::pre',this.state.currentPage)
     var currentRange = this.getCurrentRange();
     var currentData = this.getCurrentData();
-    // console.log('paeg::currentPage',this.state.currentPage,currentRange,currentData[0])
+    console.log('paeg::currentPage',this.state.currentPage,currentRange,currentData[0])
     return (
       <div>
         <div className="container">
-          <Container multiple={true} data={currentData}/>
+          <Container multiple={true} currentData={currentData}/>
           <Paginator currentPage={currentRange.from / NUM_POST_PAR_A_PAGE + 1} dataLength={data.length} postParARange={NUM_POST_PAR_A_PAGE} onChange={this.onPageChanged}/>
         </div>
       </div>

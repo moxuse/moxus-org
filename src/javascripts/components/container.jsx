@@ -13,6 +13,7 @@ class Container extends Component {
   constructor(props) {
     super(props);
     this.mapItem = this.mapItem.bind(this);
+    this.assigin = this.assigin.bind(this);
     this.state = this.getDefaultState();
   }
 
@@ -40,41 +41,36 @@ class Container extends Component {
     this.assigin();
   }
 
-  componentWillReceiveProps() {
-    this.assigin();
+  componentWillReceiveProps(props_) {
+    this.assigin(props_);
   }
 
-  assigin() {
-    // this.setState({rows: []});
+  assigin(props_) {
+    const curennt_props = props_ || this.props;
     let new_rows = [];
     var all;
     if (this.props.multiple) {
-      all = this.props.data.map((item) => {
+      all = curennt_props.currentData.map((item) => {
         return this.mapItem(item)
           .then((res) => {
             new_rows.push(res);
-            // this.forceUpdate();
           });
       });
     } else {
-      all = this.mapItem(this.props.data[0])
+      all = this.mapItem(curennt_props.currentData[0])
         .then((res) => {
           new_rows.push(res);
-          // this.forceUpdate();
         });
       all = [all];
     }
-    // console.log(this.props.data,all)
     Promise.all(all)
       .then(() => {
         this.setState({rows: new_rows});
-        // console.log('Container::assigin',this.state.rows[0], new_rows[0]);
         this.forceUpdate();
       });
   }
 
   render() {
-    // console.log('Container::draw..',this.state.rows[0]);
     return (
       <div>
         {this.state.rows}
@@ -85,14 +81,14 @@ class Container extends Component {
 
 Container.propTypes = {
   multiple: PropTypes.bool.isRequired,
-  data: PropTypes.array.isRequired
+  currentData: PropTypes.array.isRequired
 };
 
 ReactMixin.onClass(Container, History);
 
 Container.defaultProps = {
   multiple: false,
-  data: []
+  currentData: []
 };
 
 export default Container;
