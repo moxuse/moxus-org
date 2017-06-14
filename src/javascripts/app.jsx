@@ -19,6 +19,7 @@ import Page from './components/page.jsx';
 import Post from './components/post.jsx';
 import Project from './components/project/index.jsx';
 import NotFound404 from './components/notfound404.jsx';
+import scrollTop from './lib/ScrollTop.js';
 
 import 'normalize/normalize.css';
 import styles from './app.css';
@@ -31,6 +32,7 @@ class App extends Component {
   }
   onCloseMenu() {
     this.refs.header.setState({toggleMenu: false});
+    scrollTop();
   }
   onMenuChange(state) {
     if (this.refs.menu) {

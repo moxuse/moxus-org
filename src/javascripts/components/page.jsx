@@ -9,6 +9,7 @@ import Container from './container.jsx';
 import Paginator from './paginator.jsx';
 import ReactMixin from 'react-mixin';
 import { State, History } from 'react-router';
+import scrollTop from '../lib/ScrollTop.js';
 
 import data from '../../data.json';
 
@@ -46,13 +47,14 @@ class Page extends Component {
 
   onPageChanged(page) {
     this.setState({currentPage: page});
+    scrollTop();
   }
 
   render() {
     // console.log('paeg::currentPage::pre',this.state.currentPage)
     var currentRange = this.getCurrentRange();
     var currentData = this.getCurrentData();
-    console.log('paeg::currentPage',this.state.currentPage,currentRange,currentData[0])
+    // console.log('paeg::currentPage',this.state.currentPage,currentRange,currentData[0]);
     return (
       <div>
         <div className="container">
