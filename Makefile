@@ -1,6 +1,6 @@
 build:
-	@npm run build
+	@yarn run build
 server:
-	@npm run watch
+	@yarn run watch
 post:
 	@cd ./bin && ./new_post.sh

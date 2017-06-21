@@ -85,11 +85,6 @@ module.exports = {
   devtool: PRODUCTION ? false : 'inline-source-map',
 
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
     new ExtractTextPlugin("[name].css"),
     new webpack.ProvidePlugin({
       "$": "jquery",
