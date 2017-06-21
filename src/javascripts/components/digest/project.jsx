@@ -5,11 +5,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-class DigestProject extends Component {
-  constructor(props) {
-    super(props)
-  }
+import styles from './project.css';
 
+class DigestProject extends Component {
   render() {
     let ex_path = this.props.data.ex_path;
     let path_name = 'post/' + this.props.data.path.substr(0, this.props.data.path.length - 3);
@@ -25,11 +23,10 @@ class DigestProject extends Component {
         </a>);
     }
     return (
-      <div className={`pee`}>
-        {body}
-        <p className={`foo`}>
-          {this.props.data.title}
-        </p>
+      <div className={styles.project}>
+        <div className={styles.body}>
+          {body}
+        </div>
       </div>
     );
   }

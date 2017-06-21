@@ -1,0 +1,21 @@
+.project {
+  margin: 0 auto;
+  display: inline-block;
+  max-width: 50%;
+}
+
+.project .body {
+  margin-top: 50px;
+  max-width: 100%;
+}
+
+.project a img {
+  width: 95%;
+  padding-right: 20px;
+}
+
+.project .title {
+  font-size: 14px;
+  width: 95%;
+}
+

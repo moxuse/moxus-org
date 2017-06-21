@@ -5,8 +5,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 // import { render } from 'react-dom';
 // import PropTypes from 'prop-types';
-import DigestPost from './post.js';
-import DigestProject from './project.js';
+import DigestPost from './post.jsx';
+import DigestProject from './project.jsx';
 import PostLoader from '../../lib/PostLoader';
 
 import post_data from '../../../data.json';
@@ -76,24 +76,22 @@ class Digest extends Component {
       <div className={styles.digest}>
         
         <div className={styles.posts}>
-          <h3>posts</h3>
-          <p>
+          <h3>recent posts</h3>
+          <p className={styles.more}>
             <Link to={`/blog/1`}>more</Link>
           </p>
+          <hr />
+          {this.post_rows}
         </div>
-        <hr />
-
-        {this.post_rows}
 
         <div className={styles.projects}>
           <h3>project</h3>
-          <p>
+          <p className={styles.more}>
             <Link to={`/project`}>more</Link>
           </p>
+          <hr />
+          {this.project_rows}
         </div>
-        <hr />
-
-        {this.project_rows}
 
       </div>
     );

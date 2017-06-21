@@ -1,7 +1,21 @@
 .digest {
   color: #333333;
-  margin-top: 40px;
-  margin-bottom: 180px;
+  margin-top: 60px;
+  margin-bottom: 120px;
+}
+
+.digest h3 {
+  font-size: 20px;
+}
+
+.digest .more {
+  float: right;
+  margin-top: -34px;
+}
+
+.digest .more a {
+  font-weight: bold;
+  color: #999999;
 }
 
 .digest hr {
@@ -9,9 +23,9 @@
 }
 
 .digest .posts {
-  
+  margin-bottom: 120px;
 }
 
 .digest .projects {
-
+  margin-bottom: 120px;
 }

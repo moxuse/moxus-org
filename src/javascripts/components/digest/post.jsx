@@ -6,6 +6,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import MD from 'react-markdown';
 
+import styles from './post.css';
+
 class DigestPost extends Component {
   constructor(props) {
     super(props)
@@ -20,17 +22,22 @@ class DigestPost extends Component {
       }
       body += item;
     });
-    
+
     return (
-      <div>
-        <p>DigestPost</p>
-        <div className={`date`}>
-          <h1>
-          {this.props.title}
-          </h1>
-          {this.props.date}
-          <MD source={"" + body} />
+      <div className={styles.post}>
+        <div className={styles.left}>
+          <h3>
+            <Link to={`post/${this.props.path}`}>
+              {this.props.title}
+            </Link>
+          </h3>
         </div>
+        <div className={styles.date}>
+          {this.props.date}
+        </div>
+        <div className={styles.right}>
+          <MD source={"" + body} />   
+        </div>     
       </div>
     )
   }
