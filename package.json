@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rm -fr ./public ./.tmp",
     "build": "npm run clean && npm run sass && webpack",
-    "production": "npm run clean && NODE_ENV=production webpack",
+    "production": "npm run clean && NODE_ENV=production webpack -p",
     "watch": "npm run start",
     "sass": "bundle exec compass compile src/stylesheets/sass/menu_btn.scss",
     "start": "npm run build && npm run server",
