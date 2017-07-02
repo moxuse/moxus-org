@@ -68,7 +68,6 @@ class Digest extends Component {
       const key = item.path + Date.now();
       this.project_rows.push(<DigestProject data={item} key={key} isRight={i === 1} />);
     });
-    console.log(this.project_rows);
   }
 
   render() {
