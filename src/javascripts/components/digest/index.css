@@ -30,3 +30,22 @@
 .digest .projects {
   margin-bottom: 120px;
 }
+
+
+@media screen and (max-width: 480px) {
+  .digest h3 {
+    display: none;
+  }
+
+  .digest .more {
+    display: none;
+  }
+
+  .digest .more a {
+    display: none;
+  }
+
+  .digest hr {
+    display: none;
+  }
+}
