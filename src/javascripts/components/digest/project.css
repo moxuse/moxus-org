@@ -10,12 +10,19 @@
 }
 
 .project a img {
-  width: 95%;
+  width: 98%;
   padding-right: 20px;
 }
 
 .project .title {
   font-size: 14px;
-  width: 95%;
+  width: 98%;
 }
 
+.project .right {
+  text-align: right;
+}
+
+.project .right_img {
+  padding-right: 0;
+}

@@ -15,6 +15,7 @@ class DigestPost extends Component {
   render () {
     let body = "";
     let body_arr = this.props.body.split(/\r\n|\r|\n/);
+    const img_src = 'images/digest_thumbs/thumb_' + this.props.id + '.jpg';
     body_arr = body_arr.slice(0, 4);
     body_arr.map((item) => {
       if (0 <= item.indexOf('![')) {
@@ -26,16 +27,20 @@ class DigestPost extends Component {
     return (
       <div className={styles.post}>
         <div className={styles.left}>
+          <img src={img_src} />
+        </div>
+
+        <div className={styles.right}>
           <h3>
             <Link to={`post/${this.props.path}`}>
               {this.props.title}
             </Link>
           </h3>
-        </div>
-        <div className={styles.date}>
-          {this.props.date}
-        </div>
-        <div className={styles.right}>
+        
+          <div className={styles.date}>
+            {this.props.date}
+          </div>
+        
           <MD source={"" + body} />   
         </div>     
       </div>

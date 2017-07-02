@@ -37,7 +37,7 @@ class Digest extends Component {
     
   }
 
-  mapItem(item) {
+  mapItem(item, index) {
     return new Promise((resolve) => {
       var date = item.date;
         if (!date) {
@@ -47,15 +47,15 @@ class Digest extends Component {
       new PostLoader(item.path)
         .then((res) => {
           const key = res.attributes.post_id + Date.now();
-          const contents = <DigestPost title={res.attributes.title} date={date} body={res.body} key={key} path={res.path} layout={res.attributes.layout}/>;
+          const contents = <DigestPost title={res.attributes.title} id={index} date={date} body={res.body} key={key} path={res.path} layout={res.attributes.layout}/>;
           resolve(contents);
         });
     });
   }
 
   getPosts(data) {
-    const all = data.map((item) => {
-        return this.mapItem(item)
+    const all = data.map((item, i) => {
+        return this.mapItem(item, i)
           .then((res) => {
             this.post_rows.push(res);
           });
@@ -66,7 +66,7 @@ class Digest extends Component {
   getProjects(data) {
     data.map((item, i) => {
       const key = item.path + Date.now();
-      this.project_rows.push(<DigestProject data={item} key={key}/>);
+      this.project_rows.push(<DigestProject data={item} key={key} isRight={i === 1} />);
     });
     console.log(this.project_rows);
   }

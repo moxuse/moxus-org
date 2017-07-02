@@ -48,12 +48,13 @@ pre code {
 }
 
 main .subtitle {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 main .subtitle h1 {
   color: #444444;
-  margin-bottom: 135px;
+  margin-bottom: 50px;
+  margin-top: 120px;
 }
 
 .app .manu.menu__state--open {
