@@ -29,7 +29,7 @@ class Constents extends Component {
         </div>
 
         <div className={styles.content}>
-          <MD source={this.props.body} />
+          <MD source={this.props.body} escapeHtml={false} />
         </div>
       </div>
     );
