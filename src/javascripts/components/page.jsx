@@ -7,8 +7,6 @@ import PropTypes from 'prop-types';
 
 import Container from './container.jsx';
 import Paginator from './paginator.jsx';
-import ReactMixin from 'react-mixin';
-import { State, History } from 'react-router';
 import scrollTop from '../lib/ScrollTop.js';
 
 import data from '../../data.json';
@@ -69,9 +67,6 @@ class Page extends Component {
 Page.propTypes = {
   currentPage: PropTypes.number
 };
-
-ReactMixin.onClass(Page, State);
-ReactMixin.onClass(Page, History);
 
 Page.defaultProps = {data: data};
 

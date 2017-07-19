@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rm -fr ./public ./.tmp",
-    "build": "npm run clean && npm run sass && webpack",
+    "build": "npm run clean & npm run sass && webpack",
     "production": "npm run clean && NODE_ENV=production webpack -p",
     "watch": "npm run start",
     "sass": "bundle exec compass compile src/stylesheets/sass/menu_btn.scss",
@@ -17,6 +17,7 @@
   "author": "moxus",
   "license": "MIT",
   "dependencies": {
+    "babel-preset-es2015-native-modules": "^6.9.4",
     "front-matter": "^2.1.2",
     "fs": "0.0.1-security",
     "gsap": "^1.19.1",
@@ -39,7 +40,7 @@
     "babel-eslint": "7.2.3",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.4.0",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",

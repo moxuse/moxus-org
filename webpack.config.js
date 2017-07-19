@@ -28,7 +28,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ["es2015", "stage-0"]
+          presets: [
+            ["env", { "modules": false }],
+            'react'
+          ]
         }
       }, 
       {
@@ -113,8 +116,7 @@ module.exports = {
             warnings: false
           }
         }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.DedupePlugin()
+        new webpack.optimize.OccurrenceOrderPlugin()
       ] : []
     )
   ]

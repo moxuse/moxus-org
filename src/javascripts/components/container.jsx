@@ -5,8 +5,6 @@ import React, { Component } from 'react';
 // import { render } from 'react-dom';
 import Contents from './contents.jsx';
 import PropTypes from 'prop-types';
-import ReactMixin from 'react-mixin';
-import { History } from 'react-router';
 import PostLoader from '../lib/PostLoader';
 
 class Container extends Component {
@@ -83,8 +81,6 @@ Container.propTypes = {
   multiple: PropTypes.bool.isRequired,
   currentData: PropTypes.array.isRequired
 };
-
-ReactMixin.onClass(Container, History);
 
 Container.defaultProps = {
   multiple: false,
