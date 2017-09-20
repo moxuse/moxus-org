@@ -10,7 +10,7 @@ import DigestProject from './project.jsx';
 import PostLoader from '../../lib/PostLoader';
 
 import post_data from '../../../data.json';
-import project_data from '../../../project.json';
+import project_data from '../../../project_data.json';
 
 import styles from './index.css';
 

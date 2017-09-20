@@ -10,7 +10,7 @@ import Thumbnail from './thumbnail.jsx';
 
 import styles from './index.css';
 
-import data from '../../../project.json';
+import data from '../../../project_data.json';
 
 class Project extends Component {
   makeGrid() {
