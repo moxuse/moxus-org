@@ -28,12 +28,12 @@ blockquote {
 }
 
 pre {
-  padding: 16px;
+  padding: 10px;
   overflow: auto;
   font-size: 85%;
   line-height: 1.45em;
-  background-color: #f6f8fa;
-  border-radius: 3px;
+  background-color: #555;
+  border-radius: 6px;
 }
 
 pre code {

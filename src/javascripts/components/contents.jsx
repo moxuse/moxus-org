@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 // import { render } from 'react-dom';
 import { Link } from 'react-router';
 import MD from 'react-markdown';
+import codeBlock from './codeblock.jsx';
 
 import styles from './contents.css';
 
@@ -29,7 +30,14 @@ class Constents extends Component {
         </div>
 
         <div className={styles.content}>
-          <MD source={this.props.body} escapeHtml={false} />
+          <MD
+            source={this.props.body}
+            escapeHtml={false}
+            renderers={{
+              CodeBlock: codeBlock,
+              Code: codeBlock
+            }}
+          />
         </div>
       </div>
     );

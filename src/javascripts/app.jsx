@@ -26,6 +26,7 @@ import 'normalize/normalize.css';
 import styles from './app.css';
 
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.onCloseMenu = this.onCloseMenu.bind(this);
