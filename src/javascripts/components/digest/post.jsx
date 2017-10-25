@@ -27,7 +27,9 @@ class DigestPost extends Component {
     return (
       <div className={styles.post}>
         <div className={styles.left}>
-          <img src={img_src} />
+          <Link to={`post/${this.props.path}`}>
+            <img src={img_src} />
+          </Link>
         </div>
 
         <div className={styles.right}>

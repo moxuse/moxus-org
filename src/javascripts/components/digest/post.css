@@ -74,6 +74,13 @@
     text-align: center;
   }
 
+
+  /* 
+    TODO : hover no color;
+  .post .left a:hover {
+    color:#E48E00;
+  }*/
+
   .post .left img {
     width: 120px;
     height: 120px;

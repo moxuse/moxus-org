@@ -73,7 +73,7 @@ class Digest extends Component {
   render() {
     return (
       <div className={styles.digest}>
-        
+
         <div className={styles.posts}>
           <h3>recent posts</h3>
           <p className={styles.more}>
