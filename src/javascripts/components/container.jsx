@@ -19,7 +19,7 @@ class Container extends Component {
     return {rows: []};
   }
 
-  mapItem(item) {
+  mapItem(item, index=0) {
     return new Promise((resolve) => {
       // var title = item.title;
       // const image = './images/' + item.image;
@@ -29,7 +29,7 @@ class Container extends Component {
       }
       new PostLoader(item.path)
         .then((res) => {
-          const key = res.attributes.post_id + Date.now();
+          const key = res.attributes.post_id + Date.now() + index;
           const contents = <Contents title={res.attributes.title} date={date} body={res.body} key={key} path={res.path} layout={res.attributes.layout}/>;
           resolve(contents);
         });
@@ -48,8 +48,8 @@ class Container extends Component {
     let new_rows = [];
     var all;
     if (this.props.multiple) {
-      all = curennt_props.currentData.map((item) => {
-        return this.mapItem(item)
+      all = curennt_props.currentData.map((item, i) => {
+        return this.mapItem(item, i)
           .then((res) => {
             new_rows.push(res);
           });
