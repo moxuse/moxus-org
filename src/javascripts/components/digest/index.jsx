@@ -21,6 +21,11 @@ class Digest extends Component {
     this.getPosts = this.getPosts.bind(this);
     this.post_rows = [];
     this.project_rows = [];
+    this.state = this.initialState();
+  }
+
+  initialState() {
+    return { posts: null, projects: null };
   }
 
   componentDidMount() {
@@ -29,20 +34,19 @@ class Digest extends Component {
       this.getProjects(project_data.slice(0, 2))
     ])
     .then(() => {
-      this.forceUpdate();
+      this.setState({
+        posts: this.post_rows,
+        projects: this.project_rows
+      });
     });
-  }
-
-  componentWillReceiveProps(props) {
-    
   }
 
   mapItem(item, index) {
     return new Promise((resolve) => {
       var date = item.date;
-        if (!date) {
-          date = item.path.slice(0, 10);
-        }
+      if (!date) {
+        date = item.path.slice(0, 10);
+      }
 
       new PostLoader(item.path)
         .then((res) => {
@@ -55,11 +59,11 @@ class Digest extends Component {
 
   getPosts(data) {
     const all = data.map((item, i) => {
-        return this.mapItem(item, i)
-          .then((res) => {
-            this.post_rows.push(res);
-          });
+      return this.mapItem(item, i)
+        .then((res) => {
+          this.post_rows.push(res);
         });
+    });
     return Promise.all(all);
   }
 
@@ -71,29 +75,37 @@ class Digest extends Component {
   }
 
   render() {
-    return (
-      <div className={styles.digest}>
+    if (this.state.posts && this.state.projects) {
+      return (
+        <div className={styles.digest}>
 
-        <div className={styles.posts}>
-          <h3>recent posts</h3>
-          <p className={styles.more}>
-            <Link to={`/blog/1`}>more</Link>
-          </p>
-          <hr />
-          {this.post_rows}
+          <div className={styles.posts}>
+            <h3>recent posts</h3>
+            <p className={styles.more}>
+              <Link to={`/blog/1`}>more</Link>
+            </p>
+            <hr />
+            {this.state.posts}
+          </div>
+
+          <div className={styles.projects}>
+            <h3>project</h3>
+            <p className={styles.more}>
+              <Link to={`/project`}>more</Link>
+            </p>
+            <hr />
+            {this.state.projects}
+          </div>
+
         </div>
-
-        <div className={styles.projects}>
-          <h3>project</h3>
-          <p className={styles.more}>
-            <Link to={`/project`}>more</Link>
-          </p>
-          <hr />
-          {this.project_rows}
+      );
+    } else {
+      return (
+        <div>
+          <p>loading...</p>
         </div>
-
-      </div>
-    );
+      );
+    }
   }
 }
 
