@@ -1,3 +1,10 @@
+/**
+ * app.css
+ */
+body {
+  margin: 0;
+}
+
 a:link {
  color: #444444; 
  text-decoration: none;
@@ -68,6 +75,9 @@ main .subtitle h1 {
 }
 
 @media screen and (max-width: 480px) {
+  body {
+    margin: 8px;
+  }
   .app {
     width: 88%;
   }

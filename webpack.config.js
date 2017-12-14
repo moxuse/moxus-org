@@ -53,6 +53,11 @@ module.exports = {
         loader: "file-loader" 
       },
       {
+        test: /\.(glsl|frag|vert)$/,
+        exclude: /node_modules/,
+        loaders: ['raw-loader', 'glslify-loader']
+      },
+      {
         test: /\.json$/,
         loader: "json-loader" 
       },

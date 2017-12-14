@@ -1,6 +1,6 @@
-/*
-  app.jsx
-*/
+/**
+ * app.jsx
+ */
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
@@ -20,6 +20,7 @@ import Post from './components/post.jsx';
 import Project from './components/project/index.jsx';
 import Digest from './components/digest/index.jsx';
 import NotFound404 from './components/notfound404.jsx';
+import BackgroundCanvas from './components/background_canvas.jsx';
 import scrollTop from './lib/ScrollTop.js';
 
 import 'normalize/normalize.css';
@@ -48,9 +49,21 @@ class App extends Component {
     }
     return digest;
   }
+  componentDidUpdate() {
+    const canvas = document.querySelector('.background_canvas');
+    if (!canvas) {
+      return;
+    }
+    if (this.props.location.pathname.indexOf('blog') === -1) {
+      canvas.style.display = 'none';
+    } else {
+      canvas.style.display = '';
+    }
+  }
   render() {
     return (
       <div className={styles.app}>
+        <BackgroundCanvas />
         <Menu onClose={this.onCloseMenu} ref="menu" />
         <Header onMenuChange={this.onMenuChange} ref="header" />
         <main>

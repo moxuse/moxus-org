@@ -1,6 +1,7 @@
-/*
-  container.jsx
-*/
+/**
+ * container.jsx
+ */
+
 import React, { Component } from 'react';
 // import { render } from 'react-dom';
 import Contents from './contents.jsx';

@@ -1,3 +1,7 @@
+/**
+ * codeblock.jsx
+ */
+
 import React from 'react';
 import Lowlight from 'react-lowlight';
 import shallowCompare from 'react-addons-shallow-compare';

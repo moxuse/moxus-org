@@ -1,6 +1,6 @@
-/*
-  post.jsx
-*/
+/**
+ * notfound404.jsx
+ */
 
 import React, { Component } from 'react';
 // import { render } from 'react-dom';
