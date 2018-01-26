@@ -20,7 +20,6 @@ import Post from './components/post.jsx';
 import Project from './components/project/index.jsx';
 import Digest from './components/digest/index.jsx';
 import NotFound404 from './components/notfound404.jsx';
-import BackgroundCanvas from './components/background_canvas.jsx';
 import scrollTop from './lib/ScrollTop.js';
 
 import 'normalize/normalize.css';
@@ -63,7 +62,6 @@ class App extends Component {
   render() {
     return (
       <div className={styles.app}>
-        <BackgroundCanvas />
         <Menu onClose={this.onCloseMenu} ref="menu" />
         <Header onMenuChange={this.onMenuChange} ref="header" />
         <main>

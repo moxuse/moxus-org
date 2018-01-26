@@ -73,7 +73,7 @@ class Paginator extends Component {
     const prev_class_name = s.currentPage === 1 ? 'disabled' : '';
 
     const next_hiding = (max === s.currentPage) ? styles.hiding : '';
-    const next_class_name = s.currentPage === p.max ? 'disabled' : '';
+    const next_class_name = s.currentPage === p.max ? 'disabled' : '';   
 
     const notdisplaying = (currentLocation === '/') ? styles.notdisplaying : '';
 
