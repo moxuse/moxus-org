@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const copyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const PRODUCTION = process.env.NODE_ENV === 'production';
@@ -29,28 +29,28 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: [
-            ["env", { "modules": false }],
+            ['env', { 'modules': false }],
             'react'
           ]
         }
-      }, 
+      },
       {
-        test: /\.css$/, 
-        use: [ 
+        test: /\.css$/,
+        use: [
           {loader: 'style-loader'},
           {
             loader: 'css-loader',
             options: {
               modules: true,
               localIdentName: '[name]__[local]--[hash:base64:5]',
-              includePaths: ["node_modules/flexboxgrid"]
+              includePaths: ['node_modules/flexboxgrid']
             }
           }
         ]
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$/i,
-        loader: "file-loader" 
+        loader: 'file-loader'
       },
       {
         test: /\.(glsl|frag|vert)$/,
@@ -59,13 +59,13 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        loader: "json-loader" 
+        loader: 'json-loader'
       },
       {
         test: /\.yaml$/,
         use: [
           'file-loader',
-          'json-loader',         
+          'json-loader',
           'yaml-loader'
         ]
       },
@@ -87,18 +87,18 @@ module.exports = {
 
   node: {
     console: true,
-    fs: "empty"
+    fs: 'empty'
   },
 
   devtool: PRODUCTION ? false : 'inline-source-map',
 
   plugins: [
-    new ExtractTextPlugin("[name].css"),
+    new ExtractTextPlugin('[name].css'),
     new webpack.ProvidePlugin({
-      "$": "jquery",
-      "jQuery": "jquery"
+      '$': 'jquery',
+      'jQuery': 'jquery'
     }),
-    new copyWebpackPlugin(
+    new CopyWebpackPlugin(
       [
         { from: './src/', to: './' }
       ],
