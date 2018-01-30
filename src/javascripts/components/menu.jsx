@@ -1,7 +1,7 @@
 /**
  * menu.jsx
  */
- 
+import $ from 'jquery';
 import React, { Component } from 'react';
 // import { render } from 'react-dom';
 import PropTypes from 'prop-types';
