@@ -51,7 +51,7 @@ class Digest extends Component {
 
       new PostLoader(item.path)
         .then((res) => {
-          const key = res.attributes.post_id + Date.now() + index;
+          const key = res.attributes.post_id + Date.now() + index + Math.random();
           const contents = <DigestPost title={res.attributes.title} id={index} date={date} body={res.body} key={key} path={res.path} layout={res.attributes.layout}/>;
           resolve(contents);
         });
@@ -59,10 +59,11 @@ class Digest extends Component {
   }
 
   getPosts(data) {
+    this.post_rows = new Array(data.length);
     const all = data.map((item, i) => {
       return this.mapItem(item, i)
         .then((res) => {
-          this.post_rows.push(res);
+          this.post_rows[i] = res;
         });
     });
     return Promise.all(all);
