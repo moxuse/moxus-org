@@ -6,7 +6,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // import { render } from 'react-dom';
 import { Link } from 'react-router';
-import $ from 'jquery';
 import styles from './header.css';
 
 class Header extends Component {
@@ -35,7 +34,6 @@ class Header extends Component {
   render() {
     const isOpen = this.state.toggleMenu ? 'open' : '';
     if (isOpen) {
-      $('.menu').show();
       this.onMenuChange('open');
     } else {
       this.onMenuChange('close');

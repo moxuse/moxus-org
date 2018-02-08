@@ -1,7 +1,6 @@
 /**
  * menu.jsx
  */
-import $ from 'jquery';
 import React, { Component } from 'react';
 // import { render } from 'react-dom';
 import PropTypes from 'prop-types';
@@ -24,48 +23,55 @@ class Menu extends Component {
 
   onClick() {
     this.props.onClose();
-    $('.menu_btn').removeClass('open');
+    document.getElementById('.menu_btn').classList.remove('open');
+  }
+
+  openAnimation() {
+    this.refs.menu.classList.remove('hide');
+    TweenLite.set(this.refs.menu, {opacity: 0});
+    TweenLite.to(this.refs.menu, 0.6, {
+      opacity: 1,
+      ease: 'Power2.easeOut'
+    });
+    Array.from(this.refs.menu_list.querySelectorAll('li')).forEach((item, i) => {
+      TweenLite.set(item, {y: 80, opacity: 0});
+      TweenLite.to(item, 0.45, {
+        y: 1,
+        opacity: 1,
+        delay: (i * 0.03),
+        ease: 'Power2.easeInOut'
+      });
+    });
+  }
+
+  cloaseAnimation() {
+    TweenLite.to(this.refs.menu, 0.6, {
+      opacity: 0,
+      delay: 0.2,
+      ease: 'Power2.easeOut',
+      onComplete: () => this.refs.menu.classList.add(styles.hide)
+    });
+
+    Array.from(this.refs.menu_list.querySelectorAll('li')).forEach((item, i) => {
+      TweenLite.set(item, {y: 0});
+      TweenLite.to(item, 0.45, {
+        y: -80,
+        opacity: 0,
+        delay: (i * 0.03),
+        ease: 'Power2.easeInOut'
+      });
+    });
   }
 
   setChangeState(state) {
     switch (state) {
       case 'open':
-        TweenLite.set(this.refs.menu, {opacity: 0});
-        TweenLite.to(this.refs.menu, 0.6, {
-          opacity: 1,
-          ease: 'Power2.easeOut'
-        });
-
-        $(this.refs.menu_list.children).each((i, $item) => {
-          TweenLite.set($item, {y: 80, opacity: 0});
-          TweenLite.to($item, 0.45, {
-            y: 1,
-            opacity: 1,
-            delay: (i * 0.03),
-            ease: 'Power2.easeInOut'
-          });
-        });
+        this.refs.menu.classList.remove(styles.hide);
+        this.openAnimation();
         break;
 
       case 'close':
-        TweenLite.to(this.refs.menu, 0.6, {
-          opacity: 0,
-          delay: 0.2,
-          ease: 'Power2.easeOut',
-          onComplete: () => {
-            $(this.refs.menu).css({display: 'none'});
-          }
-        });
-
-        $(this.refs.menu_list.children).each((i, $item) => {
-          TweenLite.set($item, {y: 0});
-          TweenLite.to($item, 0.45, {
-            y: -80,
-            opacity: 0,
-            delay: (i * 0.03),
-            ease: 'Power2.easeInOut'
-          });
-        });
+        this.cloaseAnimation();
         break;
       default:
         break;
@@ -74,7 +80,7 @@ class Menu extends Component {
 
   render() {
     return (
-      <div className={`menu ${styles.menu}`} ref='menu'>
+      <div className={`menu ${styles.menu} ${styles.hide}`} ref='menu'>
         <ul ref='menu_list'>
           <li><Link to={`/`} onClick={this.onClick}>top</Link></li>
           <li><a href={`https://github.com/moxuse/cv/blob/master/README.md`} target='blank'>cv</a></li>

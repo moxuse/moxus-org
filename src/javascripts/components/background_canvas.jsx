@@ -10,7 +10,7 @@ import styles from './background_canvas.css';
 class BackgroundCanvas extends Component {
   render() {
     const canvas = document.querySelector('.background_canvas');
-    if (location.pathname.indexOf('blog') > -1 && !canvas ) {
+    if (location.pathname.indexOf('blog') > -1 && !canvas) {
       backgroundCanvas('#app');
     }
     return (

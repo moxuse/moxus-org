@@ -12,6 +12,10 @@
   margin: 0 auto;
   background-color: #ffffff;
   opacity: 0.85;
+  display: block;
+}
+
+.menu.hide {
   display: none;
 }
 
