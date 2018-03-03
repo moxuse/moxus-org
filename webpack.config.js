@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -10,7 +11,8 @@ module.exports = {
   },
   output: {
     path: __dirname + '/public',
-    filename: 'javascripts/[name].js'
+    filename: 'javascripts/[name]-[hash:8].js',
+    publicPath: '/'
   },
   resolve: {
     alias: {
@@ -20,17 +22,19 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
+        test: /\.html$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'html-loader',
       },
       {
+        test: /\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: [
             ['env', { 'modules': false }],
-            'react'
+            'react',
+            'es2015'
           ]
         }
       },
@@ -93,10 +97,15 @@ module.exports = {
   devtool: PRODUCTION ? false : 'inline-source-map',
 
   plugins: [
+    new webpack.ExtendedAPIPlugin(),
     new ExtractTextPlugin('[name].css'),
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: './src/html/index.html'
+    }),
     new CopyWebpackPlugin(
       [
-        { from: './src/', to: './' }
+        { from: './src/', to: './', ignore: ['index.html'] }
       ],
       {
         ignore:
