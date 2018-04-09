@@ -4,7 +4,7 @@
 
 import React, { Component } from 'react';
 // import { render } from 'react-dom';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import Container from './container.jsx';
 import Paginator from './paginator.jsx';
@@ -65,9 +65,9 @@ class Page extends Component {
   }
 }
 
-Page.propTypes = {
-  currentPage: PropTypes.number
-};
+// Page.propTypes = {
+//   currentPage: PropTypes.number
+// };
 
 Page.defaultProps = {data: data};
 

@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 // import { render } from 'react-dom';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import ReactDOM from 'react-dom';
 import {
   // Router,
@@ -94,9 +94,9 @@ class Menu extends Component {
 
 export default Menu;
 
-Menu.propTypes = {
-  onClose: PropTypes.func.isRequired
-};
+// Menu.propTypes = {
+//   onClose: PropTypes.func.isRequired
+// };
 
 Menu.defaultProps = {
   onClose: undefined

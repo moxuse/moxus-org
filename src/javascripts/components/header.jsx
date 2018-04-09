@@ -3,7 +3,7 @@
  */
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import { render } from 'react-dom';
 import { Link } from 'react-router';
 import styles from './header.css';
@@ -55,8 +55,8 @@ class Header extends Component {
   }
 }
 
-Header.propTypes = {
-  onMenuChange: PropTypes.func.isRequired
-};
+// Header.propTypes = {
+//   onMenuChange: PropTypes.func.isRequired
+// };
 
 export default Header;

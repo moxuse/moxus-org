@@ -2,26 +2,19 @@
  * codeblock.jsx
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import Lowlight from 'react-lowlight';
 import shallowCompare from 'react-addons-shallow-compare';
 import js from 'highlight.js/lib/languages/javascript';
 
 Lowlight.registerLanguage('js', js);
 
-const CodeBlock = React.createClass({
-    displayName: 'CodeBlock',
-    propTypes: {
-        literal: React.PropTypes.string,
-        language: React.PropTypes.string,
-        inline: React.PropTypes.bool
-    },
-
+class CodeBlock extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         return shallowCompare(this, nextProps, nextState);
-    },
+    }
 
-    render: function() {
+    render() {
         return (
             <Lowlight
                 language={this.props.language || 'js'}
@@ -30,6 +23,12 @@ const CodeBlock = React.createClass({
             />
         );
     }
-});
+}
+
+// CodeBlock.propTypes = {
+//     literal: React.PropTypes.string,
+//     language: React.PropTypes.string,
+//     inline: React.PropTypes.bool
+// }
 
 export default CodeBlock;

@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 // import { render } from 'react-dom';
 import Contents from './contents.jsx';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import PostLoader from '../lib/PostLoader';
 
 class Container extends Component {
@@ -85,10 +85,10 @@ class Container extends Component {
   }
 }
 
-Container.propTypes = {
-  multiple: PropTypes.bool.isRequired,
-  currentData: PropTypes.array.isRequired
-};
+// Container.propTypes = {
+//   multiple: PropTypes.bool.isRequired,
+//   currentData: PropTypes.array.isRequired
+// };
 
 Container.defaultProps = {
   multiple: false,
