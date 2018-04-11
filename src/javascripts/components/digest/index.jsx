@@ -4,8 +4,6 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-// import { render } from 'react-dom';
-// import PropTypes from 'prop-types';
 import DigestPost from './post.jsx';
 import DigestProject from './project.jsx';
 import PostLoader from '../../lib/PostLoader';

@@ -3,7 +3,6 @@
  */
 
 import React, { Component } from 'react';
-// import { render } from 'react-dom';
 import { Link } from 'react-router';
 import MD from 'react-markdown';
 import codeBlock from './codeblock.jsx';

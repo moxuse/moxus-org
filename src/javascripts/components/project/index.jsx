@@ -3,8 +3,6 @@
  */
 
 import React, { Component } from 'react';
-// import { render } from 'react-dom';
-// import PropTypes from 'prop-types';
 import {Grid, Row} from 'react-flexbox-grid';
 import Thumbnail from './thumbnail.jsx';
 
@@ -44,10 +42,6 @@ class Project extends Component {
 }
 
 export default Project;
-
-// Project.propTypes = {
-//   data: PropTypes.array
-// };
 
 Project.defaultProps = {
   data: data

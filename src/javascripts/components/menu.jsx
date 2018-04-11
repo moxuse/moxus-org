@@ -2,14 +2,7 @@
  * menu.jsx
  */
 import React, { Component } from 'react';
-// import { render } from 'react-dom';
-// import PropTypes from 'prop-types';
-// import ReactDOM from 'react-dom';
-import {
-  // Router,
-  // Route,
-  Link
-} from 'react-router';
+import { Link } from 'react-router';
 import { TweenLite } from 'gsap';
 
 import styles from './menu.css';
@@ -93,10 +86,6 @@ class Menu extends Component {
 }
 
 export default Menu;
-
-// Menu.propTypes = {
-//   onClose: PropTypes.func.isRequired
-// };
 
 Menu.defaultProps = {
   onClose: undefined

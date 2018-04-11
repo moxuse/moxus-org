@@ -3,8 +3,6 @@
  */
 
 import React, { Component } from 'react';
-// import { render } from 'react-dom';
-// import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
 import styles from './paginator.css';
@@ -37,7 +35,6 @@ class Paginator extends Component {
   }
 
   _onChange(page) {
-    // console.log('pagenator::onchnage::newpage',page);
     this.props.onChange(page);
   }
 
@@ -109,13 +106,6 @@ class Paginator extends Component {
     );
   }
 }
-
-// Paginator.propTypes = {
-//   dataLength: PropTypes.number.isRequired,
-//   postParARange: PropTypes.number.isRequired,
-//   maxVisible: PropTypes.number,
-//   onChange: PropTypes.func.isRequired
-// };
 
 Paginator.defaultProps = {
   currentPage: 0,

@@ -3,8 +3,6 @@
  */
 
 import React, { Component } from 'react';
-// import { render } from 'react-dom';
-// import PropTypes from 'prop-types';
 
 import Container from './container.jsx';
 import Paginator from './paginator.jsx';
@@ -40,7 +38,6 @@ class Page extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // console.log('nextProps::',nextProps.params.id)
     this.setState({currentPage: nextProps.params.id});
   }
 
@@ -50,10 +47,9 @@ class Page extends Component {
   }
 
   render() {
-    // console.log('paeg::currentPage::pre',this.state.currentPage)
     var currentRange = this.getCurrentRange();
     var currentData = this.getCurrentData();
-    // console.log('paeg::currentPage',this.state.currentPage,currentRange,currentData[0]);
+
     return (
       <div>
         <div className="container">
@@ -65,10 +61,6 @@ class Page extends Component {
   }
 }
 
-// Page.propTypes = {
-//   currentPage: PropTypes.number
-// };
-
-Page.defaultProps = {data: data};
+Page.defaultProps = { data: data };
 
 export default Page;

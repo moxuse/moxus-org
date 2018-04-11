@@ -3,9 +3,7 @@
  */
 
 import React, { Component } from 'react';
-// import { render } from 'react-dom';
 import Contents from './contents.jsx';
-// import PropTypes from 'prop-types';
 import PostLoader from '../lib/PostLoader';
 
 class Container extends Component {
@@ -22,8 +20,6 @@ class Container extends Component {
 
   mapItem(item, index = 0) {
     return new Promise((resolve) => {
-      // var title = item.title;
-      // const image = './images/' + item.image;
       var date = item.date;
       if (!date) {
         date = item.path.slice(0, 10);
@@ -84,11 +80,6 @@ class Container extends Component {
     }
   }
 }
-
-// Container.propTypes = {
-//   multiple: PropTypes.bool.isRequired,
-//   currentData: PropTypes.array.isRequired
-// };
 
 Container.defaultProps = {
   multiple: false,
