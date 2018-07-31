@@ -50,7 +50,13 @@ class Digest extends Component {
       new PostLoader(item.path)
         .then((res) => {
           const key = res.attributes.post_id + Date.now() + index + Math.random();
-          const contents = <DigestPost title={res.attributes.title} id={index} date={date} body={res.body} key={key} path={res.path} layout={res.attributes.layout}/>;
+          const contents = <DigestPost 
+            title={res.attributes.title} 
+            id={index} date={date} 
+            body={res.body} 
+            key={key} 
+            path={res.path} 
+            layout={res.attributes.layout}/>;
           resolve(contents);
         });
     });
@@ -70,7 +76,10 @@ class Digest extends Component {
   getProjects(data) {
     data.map((item, i) => {
       const key = item.path + Date.now();
-      this.project_rows.push(<DigestProject data={item} key={key} isRight={i === 1} />);
+      this.project_rows.push(<DigestProject 
+        data={item} 
+        key={key} 
+        isRight={i === 1} />);
     });
   }
 
