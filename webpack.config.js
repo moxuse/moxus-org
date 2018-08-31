@@ -20,7 +20,7 @@ module.exports = {
     }
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.html$/,
         exclude: /node_modules/,
@@ -62,8 +62,9 @@ module.exports = {
         loaders: ['raw-loader', 'glslify-loader']
       },
       {
+        type: 'javascript/auto',
         test: /\.json$/,
-        loader: 'json-loader'
+        use: [ { loader: 'json-loader' } ]
       },
       {
         test: /\.yaml$/,
@@ -121,11 +122,6 @@ module.exports = {
     ),
     ...(
       PRODUCTION ? [
-        new webpack.optimize.UglifyJsPlugin({
-          compress: {
-            warnings: false
-          }
-        }),
         new webpack.optimize.OccurrenceOrderPlugin()
       ] : []
     )
