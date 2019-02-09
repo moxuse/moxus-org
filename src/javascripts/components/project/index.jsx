@@ -29,7 +29,7 @@ class Project extends Component {
     return (
       <div className={`project ${styles.project}`}>
         <h2>
-          project
+          work
         </h2>
         <Grid className={styles.grid}>
           <Row>

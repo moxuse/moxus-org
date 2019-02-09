@@ -77,7 +77,7 @@ class Menu extends Component {
         <ul ref='menu_list'>
           <li><Link to={`/`} onClick={this.onClick}>top</Link></li>
           <li><a href={`https://github.com/moxuse/cv/blob/master/README.md`} target='blank'>cv</a></li>
-          <li><Link to={`/project`} onClick={this.onClick}>project</Link></li>
+          <li><Link to={`/work`} onClick={this.onClick}>work</Link></li>
           <li><Link to={`/blog/1`} id={1} onClick={this.onClick}>blog</Link></li>
         </ul>
       </div>

@@ -91,7 +91,7 @@ class Inbox extends Component {
 var routes = (
   <Route exact path= '/' component={ App }>
     <IndexRoute component={ Page }/>
-    <Route path='project' component={ Project } />
+    <Route path='work' component={ Project } />
 
     <Route path="top" component={ Inbox }>
       <Redirect from="blog/:id" to="/blog/:id" />

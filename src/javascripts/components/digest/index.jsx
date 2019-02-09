@@ -98,9 +98,9 @@ class Digest extends Component {
           </div>
 
           <div className={styles.projects}>
-            <h3>project</h3>
+            <h3>work</h3>
             <p className={styles.more}>
-              <Link to={`/project`}>more</Link>
+              <Link to={`/work`}>more</Link>
             </p>
             <hr />
             {this.state.projects}
