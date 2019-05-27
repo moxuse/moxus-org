@@ -11,7 +11,7 @@
     "watch": "yarn run start",
     "sass": "bundle exec compass compile src/stylesheets/sass/menu_btn.scss",
     "start": "yarn run build && yarn run server",
-    "deploy": "yarn run production && ./deploy.sh",
+    "deploy": "yarn run production && ./bin/deploy.sh",
     "server": "webpack-dev-server --content-base public --historyApiFallback true"
   },
   "author": "moxus",
