@@ -35,16 +35,21 @@ blockquote {
 }
 
 pre {
-  padding: 12px;
+  padding: 5px;
   overflow: auto;
   font-size: 85%;
   line-height: 1.45em;
-  background-color: #002b36;
-  border-radius: 2px;
+  background-color: #23241f;
+  border-radius: 4px;
 }
 
 pre code {
   line-height: 2.0em;
+}
+
+p code {
+  border-radius: 4px;
+  background: #888 !important;
 }
 
 .app {
