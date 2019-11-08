@@ -6,12 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rm -fr ./public ./.tmp",
-    "build": "yarn run clean & yarn run sass && webpack --mode development",
+    "build": "npm run clean & yarn run sass && webpack --mode development",
     "production": "yarn run clean && NODE_ENV=production webpack --mode production",
-    "watch": "yarn run start",
+    "watch": "npm run start",
     "sass": "bundle exec compass compile src/stylesheets/sass/menu_btn.scss",
-    "start": "yarn run build && yarn run server",
-    "deploy": "yarn run production && ./bin/deploy.sh",
+    "start": "npm run build && yarn run server",
+    "deploy": "npm run production && ./bin/deploy.sh",
     "server": "webpack-dev-server --content-base public --historyApiFallback true"
   },
   "author": "moxus",

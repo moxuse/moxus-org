@@ -1,10 +1,7 @@
 ---
-layout: post
-date: 2017-01-01
 title: template
-post_id: xxxx
-categories: 
-- 雑記
+tags:
+  - 雑記
 ---
 
 ## テンプレート
@@ -13,7 +10,7 @@ categories:
 
 #### テンプレート
 
-> テンプレートqurt
+> テンプレート qurt
 
 - 1
 - 2
@@ -32,7 +29,7 @@ class TemplateClass{
   }
 }
 
-A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code 
+A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code A Long Code
 
 ```
 

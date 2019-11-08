@@ -9,10 +9,10 @@ categories:
 
 ![20071028-img013.jpg](/images/20071028-img013.jpg)
 Koichiro Mori
-A.K.A. moxuse
+A.K.A. moxus
 
 main site: 
-[http://moxuse.org/](http://moxuse.org)
+[http://moxuse.org/](https://moxuse.org)
 flickr: 
 [http://www.flickr.com/photos/moxuse/](http://www.flickr.com/photos/moxuse/)
 YouTube: 
