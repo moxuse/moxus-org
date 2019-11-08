@@ -1,23 +1,29 @@
 /**
  * app.css
  */
+@import "~flexboxgrid/dist/flexboxgrid.css";
+
 body {
   margin: 0;
 }
 
 a:link {
- color: #444444; 
- text-decoration: none;
+  color: #444444;
+  text-decoration: none;
 }
-a:visited { color: #444444; }
+a:visited {
+  color: #444444;
+}
 a:hover {
-  color: #666666; 
-  background:#ffdcd6;
+  color: #666666;
+  background: #ffdcd6;
 }
-a:active { color: #444444; }
+a:active {
+  color: #444444;
+}
 
 ::selection {
-  background:#ffdcd6;
+  background: #ffdcd6;
 }
 p {
   word-wrap: break-word;
@@ -44,7 +50,7 @@ pre {
 }
 
 pre code {
-  line-height: 2.0em;
+  line-height: 2em;
 }
 
 p code {
@@ -53,7 +59,8 @@ p code {
 }
 
 .app {
-  font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   width: 80%;
   margin: 0 auto;
   max-width: 980px;
@@ -88,4 +95,3 @@ main .subtitle h1 {
     margin-bottom: 50px;
   }
 }
-
