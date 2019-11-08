@@ -2,9 +2,9 @@
  * header.jsx
  */
 
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import styles from './header.css';
+import React, { Component } from "react";
+import { Link } from "react-router";
+import styles from "./header.css";
 
 class Header extends Component {
   constructor(props) {
@@ -15,11 +15,11 @@ class Header extends Component {
   }
 
   getDefaultStates() {
-    return {toggleMenu: false};
+    return { toggleMenu: false };
   }
 
   onMenuClick(e) {
-    this.setState({toggleMenu: !this.state.toggleMenu});
+    this.setState({ toggleMenu: !this.state.toggleMenu });
     this.forceUpdate();
   }
 
@@ -30,11 +30,11 @@ class Header extends Component {
   }
 
   render() {
-    const isOpen = this.state.toggleMenu ? 'open' : '';
+    const isOpen = this.state.toggleMenu ? "open" : "";
     if (isOpen) {
-      this.onMenuChange('open');
+      this.onMenuChange("open");
     } else {
-      this.onMenuChange('close');
+      this.onMenuChange("close");
     }
     return (
       <div className={styles.header}>
@@ -43,7 +43,10 @@ class Header extends Component {
             <Link to={`/`}>moxus.org</Link>
           </h1>
           <div className={styles.menu_btn_wrap}>
-            <div className={`menu_btn btn12 ${isOpen}`} onClick={this.onMenuClick} >
+            <div
+              className={`menu_btn btn12 ${isOpen}`}
+              onClick={this.onMenuClick}
+            >
               <div className={`icon`}></div>
             </div>
           </div>
